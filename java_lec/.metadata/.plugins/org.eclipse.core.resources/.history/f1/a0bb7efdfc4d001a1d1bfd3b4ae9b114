@@ -1,0 +1,17 @@
+package objectArray;
+
+public class UserEx2 {
+
+	public static void main(String[] args) {
+		//배열만들고 객체를 생성
+		User[] ob=new User[3];
+		int [] num=new int[3];
+		
+		ob[1]=new User("kim", "010-123-4567");
+		ob[2]=new User("lee", "010-456-4207");
+		ob[3]=new User("park", "010-777-8080");
+		//getter를 만들었으니 getter로 출력
+
+	}
+
+}

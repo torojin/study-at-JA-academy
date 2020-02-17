@@ -1,0 +1,13 @@
+package instance;
+
+//class »ý¼º
+class A{}
+class B{}
+class C{}
+public class InstanceofEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

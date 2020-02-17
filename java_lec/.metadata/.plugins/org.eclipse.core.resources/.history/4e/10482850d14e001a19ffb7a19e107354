@@ -1,0 +1,13 @@
+package staticex;
+//기준 값이 되는 경우도 static변수로 만들기도 한다
+public class StaticEx2 {
+
+	public static void main(String[] args) {
+		System.out.println("*** 입금 당시의 금리 ***");
+		//객체 생성
+		BankAccount ba1=new BankAccount(1994, "kim", 1000, 0.07);
+		ba1.view();
+		
+	}
+
+}

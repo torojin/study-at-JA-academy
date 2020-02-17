@@ -1,0 +1,21 @@
+package step01_기초;
+
+/**
+ * 
+ * @author admin
+ * 제어문자
+ * %s : String,char 자료형을 가지는 문자열
+ * 
+ */
+public class DataType2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name = "홍길동";
+		char gender = '남';
+		
+		System.out.printf("이름 : %s\n", name); // printf로 출력시 서식문자(제어문자)필요
+		System.out.printf("성별 : %c", gender);
+	}
+
+}

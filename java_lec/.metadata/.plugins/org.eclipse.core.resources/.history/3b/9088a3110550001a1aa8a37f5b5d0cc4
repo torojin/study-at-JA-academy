@@ -1,0 +1,18 @@
+package weekendstudy;
+//자식 클래스 / 부모 Family 상속
+public class Father extends Family {
+	//default constructor
+	public Father() {
+		super();
+	}
+	public Father(String string) {
+		super(string);
+	}
+	//인스턴스 상속
+	//오버라이드
+	@Override
+	public String work() {
+		
+	}
+
+}

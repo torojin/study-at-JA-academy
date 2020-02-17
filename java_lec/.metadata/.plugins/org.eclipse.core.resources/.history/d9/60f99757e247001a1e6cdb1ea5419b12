@@ -1,0 +1,24 @@
+package temp;
+/**
+ * 
+ * @author user
+ * 난수 : 컴퓨터가 임의의 수자를 발생, 의사난수, pseudo random
+ * 
+ */
+public class RandomEx {
+
+	public static void main(String[] args) {
+		/* 
+		 * 난수 생성 방법
+		 * 1. Math 클래스
+		 */
+		System.out.println(Math.random()); // 0.0 ~ 1.0 미만의 실수
+		
+		System.out.println(Math.random()*10+1); // 1.0 ~ 11.0 미만
+		
+		System.out.println((int)(Math.random()*10+1)); // 1 ~ 11 미만
+		
+		System.out.println((int)(Math.random()*31+50));
+	}
+
+}

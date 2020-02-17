@@ -1,0 +1,46 @@
+package employee;
+/*
+ * --Emp 상속
+ * -salary:long
+ * -bonus:long
+ * +Developer()
+ * +Developer(eno, ename, phone)
+ * +toString():String
+ */
+//여기서 override의 의미? /변수의 값을 대입해주겠다
+
+//자식 클래스 / Emp 상속
+public class Developer extends Emp{
+	//field 
+	private long salary; 
+	private long bonus;
+	
+	//default constructor
+	public Developer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	//parameter constructor
+	public Developer(int eno, String ename, String phone) {
+		//부모클래스에 접근
+		super(eno, ename, phone);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void setSalary(long salary) {
+		
+	}
+	@Override
+	public void setBonus(long Bonus) {
+		
+	}
+	//toString
+	@Override
+	public String toString() {
+		return "Developer [salary=" + salary + ", bonus=" + bonus + "]";
+	}
+	
+	
+	
+
+}

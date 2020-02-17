@@ -1,0 +1,25 @@
+package finalex;
+
+//클래스 생성
+//부모 클래스
+class A{
+	final int n=100; //final / 스택 영역에 ??
+	final public void view() {
+//		n=200; --final 변수는 값을 변경할 수 없다.
+		System.out.println("A class");
+		
+	}
+}
+
+//자식클래스 / A상속
+class B extends A{
+	
+}
+
+public class FinalTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

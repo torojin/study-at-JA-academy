@@ -1,0 +1,10 @@
+package employee;
+
+public class EmpMain {
+
+	public static void main(String[] args) {
+		//object 持失 or Instance 持失
+		Engineer eng=new Engineer(101, "Steve", "1234");
+	}
+
+}

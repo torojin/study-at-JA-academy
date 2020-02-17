@@ -1,0 +1,59 @@
+package constructor;
+
+import java.util.Scanner;
+
+/*
+ * 생성자에서 두 수를 입력받아 큰 수 작은 수를 출력하세요
+ * show()메서드에서 maxValus(), minValue()를 호출할 것
+ * 
+ * 클래스 : Max
+ * -a:int
+ * -b:int
+ * +Max()
+ * +maxValue():int
+ * +minValue():int
+ * +show():void
+ * --출력
+ * Input a : 5
+ * Input b : 3
+ * 
+ * 큰수 : 5
+ * 작은 수 :3
+ */
+class Max{
+	//필드 
+	private int a;
+	private int b;
+	
+	public Max() {
+		return;
+	}
+	public int maxValue() {
+		return;
+	}
+	public int minValue() {
+		return;
+	}
+	public void show() {
+		System.out.println("큰수 :"+maxValue());
+		System.out.println("작은 수 :"+maxValue());
+	}
+}
+
+
+public class ConstructorEx6 {
+
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Max m=new Max();
+		
+		int a,b;
+		System.out.print("Input a :");
+		a=sc.nextInt();
+		System.out.print("Input b :");
+		b=sc.nextInt();
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package methodex;
+
+public class MethodEx5 {
+
+	//void = return를 할 값이 없다.
+	public static void show1() { //call by name
+		System.out.println("안녕하세요");
+		return; //생략가능
+	}
+	
+	public static void main(String[] args) {
+		show1();
+		show2('A', 25);
+	}
+
+}

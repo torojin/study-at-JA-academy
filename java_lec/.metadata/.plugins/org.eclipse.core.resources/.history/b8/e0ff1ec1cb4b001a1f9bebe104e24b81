@@ -1,0 +1,50 @@
+package object;
+/* 클래스 다이어그램 표기
+ * -(private) +(public) #(protected)
+ *  위에 이름
+ *  중간 변수
+ *  괄호가 있는건 함수
+ *  
+ *  클래스 명 : Person
+ *  +name : String
+ *  +age : int
+ *  +score : float
+ *  +setPerson(name:String, a:int, s:float) : void
+ *  +viewPerson():void
+ *
+ */
+//괄호가 붙으면 함수
+class Person{
+	/*
+	public String name; //멤버 변수 (float) 선언
+	public int age;
+	public float score;
+	
+	//변수의 값을 정해주는거 set?
+	public void setPerson(String n, int a, float s) 
+	//멤버 함수 정의, method
+	{ 
+		name=n;
+		age=a;
+		score=s;
+	}*/
+	public void setPerson() {
+		
+	}
+	
+}
+
+
+public class ObjectEx1 {
+//public : 접근 지정자
+	
+	public static void main(String[] args) {
+//		//사용하고자하는 함수가 있는 클래스를 사용해야한다.
+//		Person ps=new Person();
+//		ps.setPerson("개나리", 23, 73.5f);
+		//Person class를 가지고 pa객체를 만들고
+		Person pa=new Person();
+		ps.setPerson("개나리",23,73.5f);
+	}
+
+}

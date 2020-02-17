@@ -1,0 +1,14 @@
+package array;
+//2차원 배열, 가변배열
+// 2차원 배열 : 표를 나타내는 것
+public class ArrayEx6 {
+
+	public static void main(String[] args) {
+		int [][] num=new int[][] {
+								 {10, 40, 70, 100},
+								 {20, 50, 80, 110},
+								 {30, 60, 90, 120}
+								 };
+	}
+
+}

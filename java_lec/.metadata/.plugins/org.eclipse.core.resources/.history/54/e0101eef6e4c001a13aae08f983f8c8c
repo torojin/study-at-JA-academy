@@ -1,0 +1,13 @@
+package object;
+
+public class ObjectEx4 {
+
+	public static void main(String[] args) {
+		Employee em=new Employee();
+		em.setName("이순신");
+		em.setDept("개발부");
+		em.setPay(1500000);
+		em.setScore(85.75);
+	}
+
+}

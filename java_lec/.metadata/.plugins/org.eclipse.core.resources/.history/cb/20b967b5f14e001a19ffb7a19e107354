@@ -1,0 +1,27 @@
+package interfaceex;
+/*
+ * 인터페이스는 선언만 해야한다.
+ * 
+ * 문제!
+ * 
+ * class와 interface를 이용해서 성적처리 해보기
+ * 
+ * class : User
+ * -name:String
+ * +User()
+ * +User(name:String)
+ * +toString():String
+ * 
+ * 인터페이스 Score
+ * +sol:int(초기값:20)
+ * +getScore():int
+ * 
+ * 
+ */
+public class InterfaceEx4 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

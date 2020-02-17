@@ -1,0 +1,28 @@
+package interfaceex;
+//클래스 생성
+class Shape{
+	final int r=10;
+	public void draw() {}
+	public void erase() {}
+}
+class Circle extends Shape{
+	@Override
+	public void draw() {
+		System.out.println("반지름이 "+r+"인 원을 그린다");
+	}
+	@Override
+	public void erase() {
+		System.out.println("원을 지운다");
+	}
+}
+public class InterfaceEx1 {
+
+	public static void main(String[] args) {
+		//객체 생성
+		Circle cir=new Circle(); 
+		cir.draw();
+		cir.erase();
+		
+	}
+
+}

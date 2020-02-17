@@ -1,0 +1,16 @@
+package object;
+/* 클래스 다이어그램 표기
+ * -(private) +(public) #(protected)
+ * +name:String
+ * +k:int
+ * +e:int
+ * +m:int
+ * 
+ * +setUser(name:String, k:int, e:int, m:int) :void
+ * +getTotal():int
+ * +getUser():String
+ * 
+ */
+public class User {
+
+}

@@ -1,0 +1,33 @@
+package constructor;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/*
+ * 클래스명  : ConstructorEx4
+ * x:int
+ * y:int
+ * 
+ * +ConstructorEx4() --입력처리(스캐너)
+ * +clac():int		 --x*y를 리턴
+ * +display():void	 --출력하기
+ * 
+ * 가로를 입력 : 5
+ * 세로를 입력 : 4
+ * 
+ * 사각형의 넓이 : 20
+ */
+class ConstructorEx4{
+	
+}
+public class ConstructorEx4 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		
+		
+		new ConstructorEx4().display();
+	}
+
+}

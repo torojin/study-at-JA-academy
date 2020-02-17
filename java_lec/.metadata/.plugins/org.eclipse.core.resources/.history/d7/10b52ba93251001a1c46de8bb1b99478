@@ -1,0 +1,15 @@
+package collection1;
+
+import java.util.Set;
+
+//Set : 중복 허용 x, 순서 유지 x
+public class SetEx {
+	@SuppressWarnings(value="unchecked")//type을 확인하지 않음
+	public static void main(String[] args) {
+		//Object 생성
+		Set set=new HashSet();
+		set.add("one");	//add(Object) / object는? 모든 클래스로 표현된 자료형은 다 사용할 수 있다
+		set.add(2); //int --> new Integer(2) 자료형형태로 들어간다는 것 /기본형에서 객체형으로 변경
+	}
+
+}

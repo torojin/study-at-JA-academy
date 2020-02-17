@@ -1,0 +1,7 @@
+package animal;
+//»ó¼Ó
+public class Dog {
+	public void speak() {
+		System.out.println("¸Û¸Û~");
+	}
+}

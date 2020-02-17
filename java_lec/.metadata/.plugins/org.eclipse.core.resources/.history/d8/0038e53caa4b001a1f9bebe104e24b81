@@ -1,0 +1,11 @@
+package methodex;
+
+public class MethodEx6 {
+
+	public static void main(String[] args) {
+		int toeic=750, it=65;
+		
+		System.out.println("¿‘ªÁ√—¡° : "+toeic(toeic, it)+"¡°");
+	}
+
+}

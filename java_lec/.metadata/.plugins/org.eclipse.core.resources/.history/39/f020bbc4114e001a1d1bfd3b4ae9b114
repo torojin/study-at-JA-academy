@@ -1,0 +1,15 @@
+package animal;
+/*
+ * Cat, Dog, Duck, Fish
+ * cat은 야옹 네발로 걸어감
+ * dog 멍멍 네발
+ * Duck 꽥꽥 두발
+ * Fish 소리가 없다 헤엄쳐서 다닌다
+ */
+public class AnimalMain1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

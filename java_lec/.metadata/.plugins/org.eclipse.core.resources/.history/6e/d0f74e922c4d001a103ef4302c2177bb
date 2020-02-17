@@ -1,0 +1,15 @@
+package object;
+//객체 복습
+/*
+ * 클래스명 : Emp
+ * -name : String
+ * -dept : String
+ * -salary : int
+ */
+public class ObjectTest1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

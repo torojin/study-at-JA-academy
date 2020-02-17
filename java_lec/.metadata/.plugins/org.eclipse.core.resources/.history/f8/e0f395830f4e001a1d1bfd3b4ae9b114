@@ -1,0 +1,9 @@
+package override;
+
+public class OverrideEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

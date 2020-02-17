@@ -1,0 +1,16 @@
+package family;
+/*
+ * 문제 주말에 풀어보기
+ * 
+ * 이름 : 홍길동
+ * 아빠는 나가서 일을 한다
+ * 
+ * 이름 : 소청
+ */
+public class MainEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,29 @@
+package family;
+/*
+ * 문제 주말에 풀어보기
+ * 
+ * interface 상속받아서..
+ * family 부모클래스
+ * 오버라이드는 클래스에서 interface는 상속만
+ * 
+ * 어렵게 하려면 object array로 해볼것 
+ * 
+ * --출력
+ * 
+ * 이름 : 홍길동
+ * 아빠는 나가서 일을 한다
+ * 
+ * 이름 : 소청
+ * 엄마는 집안일을 한다
+ * 
+ * 이름 : 홍준표
+ * 아들은 공부를 한다
+ * 
+ */
+public class MainEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

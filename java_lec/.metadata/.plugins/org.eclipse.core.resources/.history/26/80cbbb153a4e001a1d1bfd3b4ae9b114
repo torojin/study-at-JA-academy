@@ -1,0 +1,12 @@
+package test22;
+/*
+(2) 파일명 : Salary      
+-name:String
+-salary:int
++Salary()
++Salary(name:String, salary:int)
++toString():String         ==>  이름, 연봉출력
+ */
+public class Salary {
+
+}

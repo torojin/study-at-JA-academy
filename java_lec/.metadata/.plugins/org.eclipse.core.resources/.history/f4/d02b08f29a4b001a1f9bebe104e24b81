@@ -1,0 +1,32 @@
+package array;
+
+public class ArrayEx4 {
+
+	public static void main(String[] args) {
+		
+		//int형 배열 선언
+		int [] num=new int[3];
+		num[0]=Integer.parseInt(args[0]);
+		num[0]=Integer.parseInt(args[1]);
+		num[0]=Integer.parseInt(args[2]);
+		
+		//최대값 최소값 구하기
+		//원리는 3 기억공간이 있으면  임의의 기억공간 2개를 만든다.
+		//최대값 최소값 각각에....
+		int max=num[0];
+		int min=num[0];
+		
+		//num변수가 0번째 배열이 자기 자신이여서 비교를 하는건 1번째 배열에서 시작
+		//그래서 i값을 1부터 시작
+		for(int i=1; i<num.length; i++) {
+			//비교
+			if(num[i]>max) max=num[i];
+			if(num[i]>min) min=num[i];
+			
+		}
+		System.out.println("최대값 : "+max);
+		System.out.println("최소값 : "+max);
+		
+	}
+
+}

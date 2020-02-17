@@ -1,0 +1,31 @@
+package objectArray;
+
+//부모클래스 생성
+class ParentEx{
+	public ParentEx() {
+		System.out.println("parent class");//3
+	}
+}
+//자식클래스 생성
+class ChildEx extends ParentEx{
+	//디폴트 생성자
+	public ChildEx() {
+		super(); //생략가능 ,2
+		System.out.println("child class");//4
+	}
+}
+public class InteritanceEx2 {
+
+	public static void main(String[] args) {
+		//객체 생성
+		new ChildEx(); //1
+	}
+
+}
+/* 정리!
+ * this.변수
+ * this.메서드()
+ * this()
+ * this(인자
+ * 
+ */

@@ -1,0 +1,67 @@
+package step02_연산자;
+
+public class OperatorEx {
+
+	public static void main(String[] args) {
+		
+		//삼항연산자
+		char code = '남';
+		String gender;
+		gender = (code == 'M' || code =='남') ? "man" : "woman";
+		// 좌변의 자료형과 뒤의 : 의 자료형이 일치해야함
+		// 출력문이 그대로 올 수 있음 system.out.println() ..?
+		System.out.println(gender);
+		
+		boolean ck = true;
+		System.out.println(!ck);
+		
+		/*
+		int k = 5;
+		//후위.전위연산자				화면		메모리
+		System.out.println(k++);//	5		6
+		System.out.println(++k);//	7		7
+		System.out.println(k);//	7		7
+		System.out.println(--k);//	6		6
+		System.out.println(k--);//	6		5
+		// 후위 연산자 - 연산이 끝나고 증가됨
+		
+		int p = 3;
+		p += 2; // p = p + 2;
+		System.out.println(p);
+		p *= 3; // p = p * 3;
+		System.out.println(p);
+		p -= 2; // p = p - 2;
+		System.out.println(p);
+		p %= 3; // p = p % 3;
+		System.out.println(p);
+		*/
+		
+		/*
+		 * 참 거짓을 판별하는 연산자 boolean
+		int score = 57;
+		boolean sw = (score >= 70 && score < 90);
+		
+		System.out.println(sw);
+		*/
+		
+		/*
+		System.out.println(5/3); // 몫
+		System.out.println(5%3); // 나머지
+		
+		int a = 5;
+	
+		System.out.println(a == 5); // a랑 5랑 같은가? true (5==a) true
+		System.out.println(a >= 5); // a가 5보다 크거나 같은가
+		System.out.println(a != 5); // a가 5가 아닌가? false
+		
+		String str = "korea";
+		System.out.println(str=="korea" || str=="KOREA"); // OR연산은 앞이 T면 다 참 , AND연산은 앞이 F면 다 F
+		
+		
+		int score = 57;
+		System.out.println(score>=70 && score<90); // 겹쳐지는건 AND 갈라지는건 OR
+		*/
+		
+	}
+
+}

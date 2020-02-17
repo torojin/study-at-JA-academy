@@ -1,0 +1,35 @@
+package object;
+/* 클래스 다이어그램 표기
+ * -(private) +(public) #(protected)
+ * +name:String
+ * +k:int
+ * +e:int
+ * +m:int
+ * 
+ * +setUser(name:String, k:int, e:int, m:int) :void
+ * +getTotal(): int
+ * +getUser(): String //getUser는 getTotal 호출
+ * 
+ */
+public class User {
+	public String name;
+	public int k;
+	public int e;
+	public int m;
+	//void 원하는 값의 형태가 아닌 제어만
+	public void setUser(String n, int kor, int eng, int mat) {
+		name=n;
+		k=kor;
+		e=eng;
+		m=mat;
+	}
+	//return이 필요하다.
+	//return 자료형
+	public int getTotal() {
+		return k+e+m;
+	}
+	//return ""; 문자열 초기화
+	public String getUser() {
+		return "이름은 "+name+"이고, 총점은 "+getTotal()+"점입니다.";
+	}
+}

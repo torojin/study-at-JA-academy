@@ -1,0 +1,10 @@
+package Shape;
+/*
+ * +Triangle()
+ * +Triangle(x:int, y:int)
+ * +getSize():double
+ */
+public class Triangle {
+	//持失切 持失
+
+}

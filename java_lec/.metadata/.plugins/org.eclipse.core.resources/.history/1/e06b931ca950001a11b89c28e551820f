@@ -1,0 +1,57 @@
+package weekendstudyarray;
+/*
+ * 문제 주말에 풀어보기
+ * 
+ * interface 상속받아서..
+ * family 부모클래스
+ * 오버라이드는 클래스에서 interface는 상속만
+ * 
+ * 어렵게 하려면 object array로 해볼것 
+ * 
+ * --출력
+ * 
+ * 이름 : 홍길동
+ * 아빠는 나가서 일을 한다
+ * 
+ * 이름 : 소청
+ * 엄마는 집안일을 한다
+ * 
+ * 이름 : 홍준표
+ * 아들은 공부를 한다
+ * 
+ */
+public class MainEx {
+	public static void main(String[] args) {
+		//Instance 생성
+		//배열로 생성
+		
+		Family[] fam=new Family[3];
+		fam[0]=new Family("홍길동");
+		fam[1]=new Family("소청");
+		fam[2]=new Family("홍준표");
+		
+		Father fat=new Father();
+		Mother mot=new Mother();
+		Son son=new Son();
+
+		
+
+		for(int i=0; i<fam.length; i++) {
+			System.out.println(fam[i].toString());
+			if(i==0)System.out.println(fat.toString());
+			else if(i==1)System.out.println(mot.toString());
+			else if(i==2)System.out.println(son.toString());
+		}
+/*
+		Family[] fam=new Family[] {new Family("홍길동"),
+									new Family("소청"),
+									new Family("홍준표")
+		};
+		for(Family f : fam) {
+			System.out.println(f.toString());
+		}
+		*/
+
+		
+	}
+}

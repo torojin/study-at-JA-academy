@@ -1,0 +1,9 @@
+package staticex;
+
+public class StaticEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

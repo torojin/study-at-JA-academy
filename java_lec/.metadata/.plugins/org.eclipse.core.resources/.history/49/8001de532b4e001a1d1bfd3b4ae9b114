@@ -1,0 +1,17 @@
+package abstractex;
+//추상클래스?
+
+//일반클래스
+class AA{
+	public void view2() {
+		
+	}
+}
+
+public class AbstractEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

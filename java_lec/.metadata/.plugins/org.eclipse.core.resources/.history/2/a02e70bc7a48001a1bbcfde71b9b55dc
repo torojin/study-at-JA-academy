@@ -1,0 +1,33 @@
+package whileex;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * 단을 입력받아 구구단을 출력하세요
+ * 
+ * -----------출력----------
+ * 단을 입력하세요 : 7
+ * 7 * 1 = 7
+ * ....
+ * 7 * 9 = 63
+ * 
+ */
+public class WhileEx2 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		System.out.print("단을 입력하세요 : ");
+		int num = Integer.parseInt(br.readLine());
+		int n = 1;
+		
+		while(true) {
+			System.out.println(num+" * "+n+" = "+num*n);
+			if(n == 9)
+				break;
+		}
+	}
+
+}

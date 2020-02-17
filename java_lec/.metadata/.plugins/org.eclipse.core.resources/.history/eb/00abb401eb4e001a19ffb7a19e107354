@@ -1,0 +1,17 @@
+package interfaceex;
+//클래스 생성
+class Shape{
+	final int r=10;
+	public void draw() {}
+	public void erase() {}
+}
+class Circle extends Shape{
+	@override
+}
+public class InterfaceEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

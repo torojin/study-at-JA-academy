@@ -1,0 +1,32 @@
+package whileex;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * 
+ * @author USER
+ * 다시 한번 실행할까요(y/Y)?  Y
+ * 다시 한번 실행할까요(y/Y)?  n
+ * 
+ * *** 수고요 ****
+ *  
+ */
+public class DoWhileEx2 {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		char a = '\0';
+		
+		do {
+			System.out.print("다시 한번 실행할까요(y/Y)? ");
+			a = br.readLine().charAt(0);
+		} while(a == 'Y' || a == 'y'); // while검사
+		
+		
+		System.out.println("\n**** 수고요 ****");
+	}
+
+}   

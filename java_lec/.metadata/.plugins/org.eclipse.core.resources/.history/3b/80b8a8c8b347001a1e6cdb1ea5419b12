@@ -1,0 +1,16 @@
+package step02_¿¬»êÀÚ;
+
+public class OperatorEx {
+
+	public static void main(String[] args) {
+		
+		System.out.println(5/3); // ¸ò
+		System.out.println(5%3); // ³ª¸ÓÁö
+		
+		int a = 5;
+	
+		System.out.println(a==5); // a¶û 5¶û °°Àº°¡? true (5==a) true
+		System.out.println(a>=5);
+	}
+
+}

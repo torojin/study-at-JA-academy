@@ -1,0 +1,68 @@
+package interfaceex;
+/*
+ * 인터페이스는 선언만 해야한다.
+ * 
+ * 문제!
+ * 
+ * class와 interface를 이용해서 성적처리 해보기
+ * 
+ * 클래스 : User
+ * -name:String
+ * +User()
+ * +User(name:String)
+ * +toString():String
+ * 
+ * 인터페이스 Score
+ * +sol:int(초기값:20) //배점
+ * +getScore():int / 맞은 수 * sol을 리턴
+ * 
+ * 인터페이스 Print / class, interface를 상속받아야 사용가능
+ * +toPaint():String
+ * 
+ * --출력화면
+ * 이름 : 홍길동
+ * 점수 : 60
+ * 
+ * 
+ */
+
+//class 선언
+class User{
+	//field
+	private String name;
+	
+	//default constructor
+	public User() {
+		super();
+	}
+	//Parameter constructor
+	public User(String name) {
+		super();
+		this.name = name;
+	}
+	//toString
+	@Override
+	public String toString() {
+		return  name;
+	}
+}
+
+//interface 선언
+interface Score{
+	public int sol=20;
+	
+	public int getScore() {
+		return 60*sol;
+	}
+}
+
+public class InterfaceEx4 {
+
+	public static void main(String[] args) {
+		//메인함수는 건들거 없음
+		//객체 생성 후 매개변수 전달
+		InterfaceEx4 ob=new InterfaceEx4("홍길동", 3);
+		System.out.println(ob.toPrint());
+	}
+
+}

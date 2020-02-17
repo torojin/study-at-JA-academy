@@ -1,0 +1,13 @@
+package array;
+
+public class ArrayEx4 {
+
+	public static void main(String[] args) {
+		
+		//int형 배열 선언
+		int [] num=new int[3];
+		num[0]=Integer.parseInt(arg[0]);
+
+	}
+
+}

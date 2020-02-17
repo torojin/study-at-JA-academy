@@ -1,0 +1,8 @@
+package collection1;
+
+public class Book {
+	//field »ý¼º
+	private String title;
+	private String author;
+	private int page
+}

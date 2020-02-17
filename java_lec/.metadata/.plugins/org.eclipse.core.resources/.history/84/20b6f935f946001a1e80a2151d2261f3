@@ -1,0 +1,34 @@
+package step01_기초;
+
+/*
+ * 범위 지정 주석 지정 ctrl + shift + /
+ *        주석 해제 ctrl + shift + \
+ * 정렬(인덴테이션) ctrl + shift + f
+ * 단일 주석 ctrl + /
+ */
+
+public class DataType1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String name = "홍길동";
+		System.out.println("이름 : "+name);
+		
+		 System.out.println("나이 : 23");
+		 System.out.println("성별 : 남"); 
+		 System.out.println("체중 : 63.4kg");
+		 System.out.println("신장 : 175.5cm");
+		
+		/*
+		 * System.out.println("이름 : 홍길동"); 
+		 * System.out.println("나이 : 23");
+		 * System.out.println("성별 : 남"); 
+		 * System.out.println("체중 : 63.4kg");
+		 * System.out.println("신장 : 175.5cm");
+		 */
+		 
+		
+	}
+
+}

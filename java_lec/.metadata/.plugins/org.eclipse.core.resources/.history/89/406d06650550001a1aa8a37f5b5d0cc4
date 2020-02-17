@@ -1,0 +1,6 @@
+package weekendstudy;
+//interface »ý¼º
+public interface Job {
+	//method
+	public String work();
+}

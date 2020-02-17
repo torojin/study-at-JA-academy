@@ -1,0 +1,9 @@
+package object;
+//°´Ã¼ °ü·Ã
+public class ObjectTest1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

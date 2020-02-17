@@ -1,0 +1,9 @@
+package array;
+//2차원 배열, 가변배열
+public class ArrayEx6 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

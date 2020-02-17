@@ -1,0 +1,12 @@
+package objectArray;
+
+public class User {
+	//객체(변수) 생성
+	private String name;
+	private String phone;
+	
+	//디폴트 생성자
+	//매개변수 생성자
+	
+	//getter, setter
+}

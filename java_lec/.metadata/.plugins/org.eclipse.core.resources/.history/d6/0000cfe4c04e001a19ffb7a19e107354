@@ -1,0 +1,12 @@
+package employee;
+/*
+ * --Emp »ó¼Ó
+ * -salary:long
+ * -bonus:long
+ * +Engineer()
+ * +Engineer(eno, ename, bonus)
+ * +toString():String
+ */
+public class Engineer {
+
+}

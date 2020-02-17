@@ -1,0 +1,13 @@
+package objectArray;
+
+public class UserEx1 {
+
+	public static void main(String[] args) {
+		//배열을 안만들고 객체를 생성하면
+		
+		User ob1=new User("kim", "010-123-4567");
+		User ob2=new User("lee", "010-123-4567");
+		User ob3=new User("park", "010-123-4567");
+	}
+
+}

@@ -1,0 +1,14 @@
+package test23;
+/*
+클래스명 : SubEntry  ==> Entry상속
+-definition:String
+-year:int
++SubEntry()
++SubEntry(definition:String, year:int)
++SubEntry(word:String, definition:String, year:int)
++toString():String           ==> 원어, 시기 출력
+
+ */
+public class SubEntry {
+
+}

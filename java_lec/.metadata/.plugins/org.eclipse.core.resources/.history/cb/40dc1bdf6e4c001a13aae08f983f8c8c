@@ -1,0 +1,9 @@
+package object;
+
+public class ObjectEx4 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

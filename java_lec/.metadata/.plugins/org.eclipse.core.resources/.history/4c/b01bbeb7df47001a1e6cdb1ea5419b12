@@ -1,0 +1,22 @@
+package temp;
+/**
+ * 
+ * @author user
+ * 
+ * $ java ArgsEx 10 20 30
+ * 세 수의 합 : 60
+ * 
+ */
+public class ArgsEx {
+
+	public static void main(String[] args) {
+		
+//		System.out.println(args);
+		int a, b, c;
+		
+		a = Integer.parseInt(args[0]);
+		a = Integer.parseInt(args[1]);
+		a = Integer.parseInt(args[2]);
+	}
+
+}

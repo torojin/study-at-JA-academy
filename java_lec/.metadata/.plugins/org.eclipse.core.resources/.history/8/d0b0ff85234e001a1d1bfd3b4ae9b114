@@ -1,0 +1,21 @@
+package Shape;
+/*
+ * +Rectangle()
+ * +Rectangle(x:int, y:int)
+ * +getSize():double
+ */
+public class Rectangle extends Shape{
+	//디폴트 생성자 생성
+	public Rectangle() {
+		super();
+	}
+	//매개변수 생성자 생성
+	public Rectangle(int x, int y) {
+		super();
+		this.x=x;
+		this.y=y;
+	}
+	public double getSize() {
+		return x*y;
+	}
+}

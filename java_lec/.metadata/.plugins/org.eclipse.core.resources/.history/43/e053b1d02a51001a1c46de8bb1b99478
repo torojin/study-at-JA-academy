@@ -1,0 +1,20 @@
+package instance;
+
+//class 생성
+//부모클래스
+class A{}
+//자식클래스 B,C / 부모클래스 A 상속
+class B extends A{}
+class C extends A{}
+public class InstanceofEx1 {
+
+	public static void main(String[] args) {
+		A a=new A();
+		B b=new B();
+		
+		System.out.println(b instanceof A);
+		System.out.println(a instanceof C);
+		System.out.println(b instanceof C); //error
+	}
+
+}

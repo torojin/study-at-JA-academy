@@ -1,0 +1,15 @@
+package object;
+
+public class ObjectEx4 {
+
+	public static void main(String[] args) {
+		//객체 생성
+		Employee em=new Employee();
+		//setter 가져와서 출력
+		em.setName("이순신");
+		em.setDept("개발부");
+		em.setPay(1500000);
+		em.setScore(85.75);
+	}
+
+}

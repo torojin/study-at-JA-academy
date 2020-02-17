@@ -1,0 +1,15 @@
+package finalex;
+/*
+ * 자바에서 생략 가능한 것을 보자
+ */
+
+class Test{
+	String name="강호동"
+}
+public class Object {
+
+	public static void main(String[] args) {
+
+	}
+
+}

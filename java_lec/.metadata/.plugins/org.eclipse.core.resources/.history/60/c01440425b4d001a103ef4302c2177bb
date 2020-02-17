@@ -1,0 +1,16 @@
+package constructor;
+
+public class ConstructorEx5 {
+
+	public static void main(String[] args) {
+		Student st=new Student();
+		//디폴트 생성자
+		st.setName("뽀로로");
+		st.setKor(95);
+		st.setEng(85);
+		st.setMat(73);
+		//뽀로로의 점수는 253점이며 평균은 84.33점이고 학점은 B입니다.
+		System.out.println(st.toString());
+	}
+
+}

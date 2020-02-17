@@ -1,0 +1,14 @@
+package constructor;
+
+public class ConstructorEx8 {
+	public static void main(String[] args) {
+		//객체 생성?
+		book bk1=new Book();
+		
+		bk1.setTitle("자바의 정석");
+		bk1.setAuthor("김자바");
+		bk1.setPage(500);
+		System.out.println(bk1.toString());
+	}
+
+}

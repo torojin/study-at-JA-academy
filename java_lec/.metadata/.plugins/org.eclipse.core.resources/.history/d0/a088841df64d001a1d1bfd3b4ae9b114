@@ -1,0 +1,17 @@
+package constructor;
+
+public class Member {
+	//객체(변수) 두개 생성
+	private String name;
+	private int age;
+	
+	//생성자
+	public Member(String name, int age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
+	
+
+	
+}

@@ -1,0 +1,30 @@
+package exception;
+
+/*
+ * 예외처리
+ * 
+ */
+public class ExceptionEx1 {
+
+	public static void main(String[] args) {
+		/* 오랜만에 argument 처리
+		 * $ java ExceptionEx1 2 ==> 2
+		 * $ java ExceptionEx1 0 ==> 0으로 나눌 수 없어요
+		 * $ java ExceptionEx1 p ==> 숫자로 바꿀 수 없습니다
+		 * $ java ExceptionEx1 공백 전달 ==> 2
+		 */
+		int var=5;
+		try {
+		int n=Integer.parseInt(args[0]);
+		System.out.println(var/n);
+		}catch(ArithmeticException e) {//객체를 잡겠다 
+			System.out.println("0으로 나눌 수 없어요");
+		}catch(NumberFormatException e) {
+			System.out.println("숫자로 바꿀 수 없습니다");
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("입력된 값이 없습니다");
+		}
+		
+	}
+
+}

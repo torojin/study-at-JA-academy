@@ -1,0 +1,27 @@
+package whileex;
+/**
+ * 
+ * @author USER
+ * 과제1
+ * 
+ * 65~90 사이의 난수 10개 생성하기
+ * 
+ * --------출력-------
+ * 88 66 ..
+ * 
+ * do while 사용
+ * 
+ */
+public class DoWhileEx3 {
+
+	public static void main(String[] args) {
+		int count=0;
+		
+		do {
+			double n = (int)(Math.random()*25+65);
+			System.out.print(n+" ");
+			count++;
+		} while(count != 10);
+	}
+
+}

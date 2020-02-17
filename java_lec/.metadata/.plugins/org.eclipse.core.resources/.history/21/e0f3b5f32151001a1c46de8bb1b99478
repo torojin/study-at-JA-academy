@@ -1,0 +1,18 @@
+package tv1;
+//자식 클래스 상속
+public class SamsungTv {
+	//turn Method 선언
+	public void turnOn() {
+		System.out.println("Samsung TV-전원을 켠다");
+	}
+	public void turnOff() {
+		System.out.println("Samsung TV-전원을 끈다");
+	}
+	//sound Method 선언
+	public void soundUp() {
+		System.out.println("Samsung TV-소리를 높인다");
+	}
+	public void soundDown() {
+		System.out.println("Samsung TV-소리를 줄인다");
+	}
+}

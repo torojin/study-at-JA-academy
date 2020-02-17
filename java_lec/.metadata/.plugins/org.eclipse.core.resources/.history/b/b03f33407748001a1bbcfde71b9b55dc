@@ -1,0 +1,47 @@
+package switchex;
+/**
+ * 
+ * @author USER
+ * args로 입력된 month로 일수를 구하세요
+ * 
+ * $ java SwitchEx3 3
+ * 
+ * ---------출력--------
+ * 3월은 31일까지 있습니다.
+ * 
+ */
+public class SwitchEx3 {
+
+	public static void main(String[] args) {
+		
+		int month;
+		
+		month = Integer.parseInt(args[0]); // 입력받는 값만 argument로 전달
+		
+		switch(month%7) {
+		case 0 :
+		case 1 :
+			System.out.println(month+"월은 31일까지 있습니다");
+			break;
+		case 2 :
+			System.out.println(month+"월은 30일까지 있습니다");
+			break;
+		case 3 :
+			System.out.println(month+"월은 31일까지 있습니다");
+			break;
+		case 4 :
+			System.out.println(month+"월은 30일까지 있습니다");
+			break;
+		case 5 :
+			System.out.println(month+"월은 31일까지 있습니다");
+			break;
+		case 6 :
+			System.out.println(month+"월은 30일까지 있습니다");
+			break;
+			default :
+				System.out.println("잘못 입력했습니다");
+				break;
+		}
+	}
+
+}

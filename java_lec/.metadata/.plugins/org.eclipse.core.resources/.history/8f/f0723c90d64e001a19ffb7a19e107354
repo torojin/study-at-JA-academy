@@ -1,0 +1,13 @@
+package exception;
+
+/*
+ * 예외처리
+ * 
+ */
+public class ExceptionEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

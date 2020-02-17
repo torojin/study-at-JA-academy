@@ -1,0 +1,5 @@
+package tv2;
+
+public interface Tv {
+
+}

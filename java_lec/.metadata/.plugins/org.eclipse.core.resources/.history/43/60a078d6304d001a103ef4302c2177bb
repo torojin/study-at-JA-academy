@@ -1,0 +1,11 @@
+package constructor;
+
+public class ConstructorEx1 {
+
+	public static void main(String[] args) {
+		//객체 생성
+		//한번만 쓰고 말거면 아래처럼
+		new ConstructorEx1();
+	}
+
+}

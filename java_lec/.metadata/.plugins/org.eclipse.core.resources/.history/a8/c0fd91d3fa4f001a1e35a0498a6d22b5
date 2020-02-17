@@ -1,0 +1,9 @@
+package weekendstudy;
+
+public class Father {
+
+	public Father(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

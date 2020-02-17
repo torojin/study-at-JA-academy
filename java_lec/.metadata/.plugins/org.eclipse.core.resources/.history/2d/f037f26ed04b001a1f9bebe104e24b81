@@ -1,0 +1,12 @@
+package object;
+
+public class ObjectEx2 {
+
+	//시작은 여기서
+	//그 외의 객체는 User.java에서
+	public static void main(String[] args) {
+		User ob=new User();
+		ob.setUser("진달래", 97,55,79);
+	}
+
+}

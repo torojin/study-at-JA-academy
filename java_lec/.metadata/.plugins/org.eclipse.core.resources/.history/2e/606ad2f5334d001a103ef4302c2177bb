@@ -1,0 +1,14 @@
+package constructor;
+
+public class ConstructorEx2 {
+	
+	public ConstructorEx2(String string, int n) {
+		System.out.println(str+" "+n+" constructor");
+	}
+
+	public static void main(String[] args) {
+		//객체 생성
+		new ConstructorEx2("가나다",10);
+	}
+
+}

@@ -1,0 +1,8 @@
+package emp;
+//VO(Value Object), entity(За)
+public class EmpVO {
+	private String ename;
+	private String dept;
+	private int salary;
+	
+}

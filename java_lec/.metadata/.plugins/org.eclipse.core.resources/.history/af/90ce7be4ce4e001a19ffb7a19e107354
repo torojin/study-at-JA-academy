@@ -1,0 +1,29 @@
+package staticex;
+
+
+//클래스 생성
+class Test{
+	int x;
+	int y;
+	static int z;
+
+
+	//static은 
+
+	public Test(int x, int y, int z1) {
+		this.x=x;
+		this.y=y;
+		z=z1;
+		System.out.println("객체 초기화 영역");
+	}
+	static {
+		System.out.println("static 초기화 영역");
+	}
+}
+public class StaticEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

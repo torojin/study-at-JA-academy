@@ -1,0 +1,21 @@
+package test23;
+/*
+(2)클래스명 : Entry
+-word:String
++Entry()                            ==> **  약어사전 **    출력
++Entry(word:String)
++toString()String               ==> 약어 : OOP   출력
+ */
+public class Entry {
+	//filed 
+	private String word;
+	//default constructor
+	public Entry() {
+		super();
+	}
+	//parameter constructor
+	public Entry(String word) {
+		super();
+	}
+	
+}

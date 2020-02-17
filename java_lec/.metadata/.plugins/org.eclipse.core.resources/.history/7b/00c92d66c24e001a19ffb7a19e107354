@@ -1,0 +1,43 @@
+package employee;
+/*
+ * --Emp 상속
+ * -salary:long
+ * -bonus:long
+ * +Engineer()
+ * +Engineer(eno, ename, phone)
+ * +toString():String
+ */
+
+//자식 클래스 / Emp 상속
+public class Engineer extends Emp{
+	//field 
+	private long salary; 
+	private long bonus;
+	
+	//default constructor
+	public Engineer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	//parameter constructor
+	public Engineer(int eno, String ename, String phone) {
+		super(eno, ename, phone);
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void setSalary(long salary) {
+		
+	}
+	@Override
+	public void setBonus(long bonus) {
+		
+	}
+	
+	//toString 
+	@Override
+	public String toString() {
+		return "Engineer [salary=" + salary + ", bonus=" + bonus + "]";
+	}
+	
+	
+}

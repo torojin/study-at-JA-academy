@@ -1,0 +1,40 @@
+package inheritance;
+
+//클래스 2개 추가
+//부모클래스
+class NumberEx1{
+	//필드(변수)
+	int a,b;
+	//생성자
+	public NumberEx1(int a, int b) {
+		this.a=a;
+		this.b=b;
+	}
+	//메서드
+	public void view1() {
+		System.out.println(a+" "+b);
+	}
+}
+class NumberEx2 extends NumberEx1{
+	//필드
+	int c;
+	//생성자
+	//추가된 필드 int c추가
+	public NumberEx2(int a, int b, int c) {
+		super(a, b);
+		this.c=c;
+	}
+	//public 메서드 생성
+	public void view2() {
+		System.out.println(c);
+	}
+	
+}
+public class InheritanceEx4 {
+
+	public static void main(String[] args) {
+		//객체 생성
+		new NumberEx1(100,200);
+	}
+
+}

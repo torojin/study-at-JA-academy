@@ -1,0 +1,26 @@
+package abstractex;
+//추상클래스?
+
+//일반클래스
+//부모클래스
+class AA{
+	public void view1() {System.out.println("view1 method");}
+	public void view2() {System.out.println("view2 method");}
+}
+//자식 클래스(상속)
+class BB extends AA{
+	//오버라이드
+	@Override
+	public void view1() {System.out.println("view1 method");}
+	
+}
+
+public class AbstractEx1 {
+
+	public static void main(String[] args) {
+		AA ob=new AA(); //객체 생성 가능
+		ob.view1(); //1 method 나옴
+		ob.view2();	//2 method 나옴
+	}
+
+}

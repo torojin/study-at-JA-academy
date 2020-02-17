@@ -1,0 +1,9 @@
+package object;
+
+public class ScannerEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

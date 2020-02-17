@@ -1,0 +1,6 @@
+package weekendstudyarray;
+//interface 持失
+public interface Job {
+	//interface method 識情
+	public String work();
+}

@@ -1,0 +1,21 @@
+package finalex;
+/*
+ * 자바에서 생략 가능한 것을 보자
+ */
+//import java.lang.Object; 생략가능?
+class Test{
+	String name="강호동";
+	public void view() {
+		System.out.println("이름 : "+name);
+	}
+	public String toString() {
+		return name;
+	}
+}
+public class Object {
+
+	public static void main(String[] args) {
+		new Test().view();
+	}
+
+}

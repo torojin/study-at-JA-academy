@@ -1,0 +1,8 @@
+package collection2;
+
+public class MapEx2 {
+	@SuppressWarnings(value="unchecked")
+	public static void main(String[] args) {
+	}
+
+}

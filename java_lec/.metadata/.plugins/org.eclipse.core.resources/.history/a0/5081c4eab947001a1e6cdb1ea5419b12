@@ -1,0 +1,13 @@
+package ifEx;
+
+public class IfEx1 {
+
+	public static void main(String[] args) {
+		String str = "korea";
+		
+		if(str == "korea") {
+			System.out.println("¥Î«—πŒ±π");
+		}
+	}
+
+}

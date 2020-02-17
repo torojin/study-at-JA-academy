@@ -1,0 +1,23 @@
+package finalex;
+
+//클래스 생성
+//부모 클래스
+class A{
+	final int n=100;
+	final public void view() {
+		
+	}
+}
+
+//자식클래스 / A상속
+class B extends A{
+	
+}
+
+public class FinalTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

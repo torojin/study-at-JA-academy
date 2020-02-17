@@ -1,0 +1,21 @@
+package objectArray;
+
+//부모클래스 생성
+class ParentEx{
+	
+}
+//자식클래스 생성
+class ChildEx extends ParentEx{
+	//디폴트 생성자
+	public ChildEx() {
+		super(); //생략가능
+		System.out.println("child class");
+	}
+}
+public class InteritanceEx2 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,32 @@
+package step01_기초;
+
+/**
+ * 
+ * @author admin
+ * 제어문자
+ * %s : String, char자료형을 가지는 문자열
+ * %c : char형을 문자열(보통 이것 사용)
+ * %f : float, double 실수형 자료형
+ * %d : int, byte, long 정수형 자료형
+ * 
+ * System.out.printf("메세지 or 제어문자(\n, %s 등)", 변수);
+ */
+public class DataType2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name = "홍길동";
+		char gender = '남';
+		double score = 85.3;
+		int age = 25;
+		double tall = 183.4;
+		
+		System.out.printf("이름 : %s\n", name); // printf로 출력시 서식문자(제어문자)필요
+		System.out.printf("성별 : %c\n", gender);
+		System.out.printf("점수 : %-10.1f\n", score); // 왼쪽정렬을 해서 10만큼의 자리를 차지, .1은 소수점아래 한자리
+		System.out.printf("나이 : %5d\n", age); // 오른쪽정렬을 해서 10만큼의 자리를 차지
+		System.out.printf("신장 : %.2f\n", tall); // 주로 정렬은 하지않고 소수점아래 몇자리까지인지만 표시함, - 표시안함(오류)
+		
+	}
+
+}

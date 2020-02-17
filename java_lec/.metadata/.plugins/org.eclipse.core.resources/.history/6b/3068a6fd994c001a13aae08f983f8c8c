@@ -1,0 +1,12 @@
+package overload;
+//overload = 중복
+/*
+ * overload method(중복함수) : 같은 이름의 함수를 여러번 구현
+ */
+public class OverloadEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

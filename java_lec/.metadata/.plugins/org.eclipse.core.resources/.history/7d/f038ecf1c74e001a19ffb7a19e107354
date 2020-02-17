@@ -1,0 +1,25 @@
+package access1;
+
+import access2.AccessEx3;
+
+/*
+ * 
+ */
+public class AccessEx1 {
+	//field(variable) 선언
+	private int x=10;
+	private int y=20;
+	
+	public static void main(String[] args) {
+		//object or Instance생성
+		AccessEx1 a1=new AccessEx1();
+		System.out.println(a1.x+"\t"+a1.y); //자기 클래스 안에서 실행되는 건 문제 없다.
+		
+		AccessEx2 a2=new AccessEx2();
+		System.out.println(a2.x+"\t"+a2.y); //default 접근 지정자 로 선언한 것
+		
+		AccessEx3 a3=new AccessEx3(); //import 해야 접근 가능
+		System.out.println(a3.x+"\t"+a3.y+a3.x1);// x1은 default로 되어있어 패키지가 벗어나면 접근 불가능
+	}
+
+}

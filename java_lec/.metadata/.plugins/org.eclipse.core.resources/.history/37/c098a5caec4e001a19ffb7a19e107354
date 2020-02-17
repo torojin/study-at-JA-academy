@@ -1,0 +1,15 @@
+package interfaceex;
+//abstract class »ý¼º
+abstract class Cryable{
+	abstract public void cry();
+}
+abstract class Flyable{
+	abstract public void fly();
+}
+public class InterfaceEx2 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

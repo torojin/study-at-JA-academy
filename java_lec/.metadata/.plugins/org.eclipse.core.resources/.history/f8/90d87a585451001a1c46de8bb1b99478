@@ -1,0 +1,21 @@
+package collection2;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapEx5 {
+
+	public static void main(String[] args) {		
+		Map<String, String> map=new HashMap<String, String>();//Map<String, Book> map=new HashMap<>();똑같다.
+		//객실 중복
+		map.put("둘리", "객실1");
+		map.put("또치", "객실2");
+		map.put("마이콜", "객실3");
+		map.put("도우너", "객실2");
+		map.put("고길동", "객실3");
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.print("방 이름을 입력하세요 (객실1~5) : ");
+	}
+
+}

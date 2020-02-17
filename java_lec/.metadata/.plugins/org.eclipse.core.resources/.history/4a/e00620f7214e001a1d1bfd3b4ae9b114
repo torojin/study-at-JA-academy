@@ -1,0 +1,24 @@
+package Shape;
+/*
+ * -x:int
+ * -y:int
+ * +Shape()
+ * +Shape(x:int, y:int)
+ * +setter&getter
+ * +getSize():double
+ * 
+ */
+public class Shape {
+	//filed 持失
+	private int x,y;
+	
+	//持失切 持失
+	public Shape() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
+
+
+}

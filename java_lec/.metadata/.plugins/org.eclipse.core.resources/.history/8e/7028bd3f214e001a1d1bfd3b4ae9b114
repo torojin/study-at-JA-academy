@@ -1,0 +1,12 @@
+package Shape;
+/*
+ * -x:int
+ * -y:int
+ * +Shape()
+ * +Shape(x:int, y:int)
+ * +setter&getter
+ * +getSize():double
+ */
+public class Shape {
+
+}

@@ -1,0 +1,10 @@
+package inheritance;
+
+public class SuperTest {
+	//필드(변수)
+	private String name;
+	private String addr;
+	//생성자
+	
+
+}

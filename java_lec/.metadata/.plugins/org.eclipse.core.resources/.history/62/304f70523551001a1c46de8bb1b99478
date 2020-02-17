@@ -1,0 +1,9 @@
+package collection1;
+//list : 서로 다른 자료형의 연속된 기억공간
+public class listEx1 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

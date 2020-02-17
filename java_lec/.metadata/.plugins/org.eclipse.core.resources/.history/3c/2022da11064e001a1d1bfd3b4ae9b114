@@ -1,0 +1,28 @@
+package inheritance;
+
+//부모클래스 생성
+class Branch{
+	//디폴트 생성자
+	public Branch() {
+		System.out.println("Branch default constructor");//4
+	}
+	public Branch(String str) {
+		this();
+		System.out.println(str+"Branch constructor");//3
+	}
+}
+//자식클래스 Branch 상속
+class Leaf extends Branch{
+	//디폴트 생성자
+	public Leaf() {
+		super("hi~");//2
+		System.out.println("Leaf default constructor");//5
+	}
+}
+public class InheritanceEx3 {
+
+	public static void main(String[] args) {
+		new Leaf();//1
+	}
+
+}
