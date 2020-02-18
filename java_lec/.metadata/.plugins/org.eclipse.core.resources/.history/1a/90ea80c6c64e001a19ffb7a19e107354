@@ -1,7 +1,0 @@
-package access1;
-
-public class AccessEx2 {
-	//field(variable) »ý¼º
-	int x=100;
-	int y=200;
-}

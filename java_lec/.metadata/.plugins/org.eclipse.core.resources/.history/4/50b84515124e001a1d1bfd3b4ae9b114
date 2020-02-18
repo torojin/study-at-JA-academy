@@ -1,7 +1,0 @@
-package animal;
-//惑加贸府
-public class Cat extends Animal {
-	public void speak() {
-		System.out.println("具克");
-	}
-}

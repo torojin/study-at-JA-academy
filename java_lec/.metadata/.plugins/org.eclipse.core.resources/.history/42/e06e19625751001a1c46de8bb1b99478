@@ -1,5 +1,0 @@
-package emp;
-//DAO (Data Access Object) : 데이터베이스에서 자원을 가져올 용도로 사용하는 클래스
-public class EmpDao {
-
-}

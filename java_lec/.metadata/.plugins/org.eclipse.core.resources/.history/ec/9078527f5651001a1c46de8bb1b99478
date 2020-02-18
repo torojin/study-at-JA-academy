@@ -1,5 +1,0 @@
-package emp;
-//VO(value Object), entity
-public class EmpVO {
-
-}

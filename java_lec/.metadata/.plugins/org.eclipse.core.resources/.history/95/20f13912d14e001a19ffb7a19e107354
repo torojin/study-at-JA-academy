@@ -1,9 +1,0 @@
-package staticex;
-//기준 값이 되는 경우도 static변수로 만들기도 한다
-public class StaticEx2 {
-
-	public static void main(String[] args) {
-
-	}
-
-}

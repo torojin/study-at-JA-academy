@@ -1,9 +1,0 @@
-package instance;
-
-public class InstanceofEx2 {
-
-	public static void main(String[] args) {
-
-	}
-
-}

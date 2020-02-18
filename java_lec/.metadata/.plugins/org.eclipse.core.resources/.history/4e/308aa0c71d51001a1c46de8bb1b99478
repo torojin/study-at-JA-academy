@@ -1,9 +1,0 @@
-package tv1;
-
-public class TvUser {
-
-	public static void main(String[] args) {
-
-	}
-
-}

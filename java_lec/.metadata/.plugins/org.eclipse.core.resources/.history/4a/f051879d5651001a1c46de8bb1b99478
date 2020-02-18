@@ -1,5 +1,0 @@
-package emp;
-//VO(Value Object), entity(За)
-public class EmpVO {
-
-}
