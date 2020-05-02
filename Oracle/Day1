@@ -1,0 +1,278 @@
+/*
+샘플 스키마 Scott.sql
+*/
+
+--EMP Table 조회
+SELECT * FROM EMP;
+/*
+
+--DEPT Table 읽기
+SELECT * FROM DEPT;
+
+INSERT INTO DEPT VALUES(50, '총무부', '서울'); --data 추가
+UPDATE DEPT SET LOC='부산' WHERE DNAME='총무부'; --WHERE DNAME= '총무부'를 찾아서 SET LOC='부산'으로 바꿈
+DELETE FROM DEPT WHERE DEPTNO=50; --DEPTNO=50를 찾아서 삭제해라.
+
+SELECT * FROM DEPT01;
+SELECT * FROM DEPT02;
+INSERT INTO DEPT02 VALUES(10,'개발부','서울'); --데이터 삽입
+
+-- CREATE(Table 생성)
+CREATE TABLE DEPT01 (
+DEPTNO NUMBER(4),
+DNAME VARCHAR2(10),
+LOC VARCHAR2(9)
+);
+
+--describe약자
+--DEPT01 유형표시
+DESC DEPT01;
+
+-- ALTER 변경(Table 변경)
+ALTER TABLE DEPT01
+MODIFY(DNAME VARCHAR2(30)); --Table 타입 변경
+
+-- RENAME(Table 이름 변경)
+RENAME DEPT01 TO DEPT02;
+
+-- TRUNCATE=DROP+COMMIT(데이터베이스 저장 공간 삭제)
+TRUNCATE TABLE DEPT02;
+
+-- DROP(Table 삭제)
+DROP TABLE DEPT02;
+DROP TABLE DEPT02 CASCADE CONSTRAINTS; -- CASCADE CONSTRAINTS 옵션은 종속된 제약조건을 삭제한다.
+
+*/
+
+/*
+--SCOTT계정이 가지고 있는 테이블을 보여줌
+SELECT * FROM TAB;
+
+--Table이 가지고 이는 구조를 볼 수 있다. 제약조건이 무엇인지 볼 수 있음
+DESC EMP;
+
+SELECT * FROM EMP;
+
+SELECT ENAME, SAL, SAL*12
+FROM EMP;
+
+--Null값으로인해 SAL*12+COMM 부분이 Null로 출력
+SELECT ENAME, SAL, JOB, COMM, SAL*12, SAL*12+COMM
+FROM EMP;
+-- NVL(Null VaLue) 함수는 NULL을 0 또는 다른 값으로 변환하기 위해서 사용한다.
+SELECT ENAME, SAL, JOB, COMM, SAL*12, SAL*12+NVL(COMM, 0)
+FROM EMP;
+
+
+--Colume의 별칭을 지정
+SELECT ENAME, SAL*12+NVL(COMM, 0) AS ANNSAL
+FROM EMP;
+--AS는 생략 가능
+SELECT ENAME, SAL*12+NVL(COMM, 0) ANNSAL
+FROM EMP;
+--Colume 별칭 없이 출력
+SELECT ENAME, SAL*12+NVL(COMM, 0)
+FROM EMP;
+
+--Colume이름은 영어로 쓰는게 좋다.
+SELECT ENAME, SAL*12+NVL(COMM, 0)"연봉"
+FROM EMP;
+
+--Concatenation 연산자의 정의와 사용
+--Concatenation 의 사전적인 의미는 연결이다.
+--여러 개의 컬럼을 연결할 때 사용하는데 Concatenation 연산자로 "||" 수직바를 사용한다.
+SELECT ENAME || ' IS A ' || JOB
+FROM EMP;
+
+SELECT ENAME || JOB
+FROM EMP;
+
+--DISTINCT 키워드
+--동일한 데이터 값들이 중복되지 않도록, 즉 한 번씩만 출력되도록 하기 위해서 사용한다.
+SELECT DEPTNO
+FROM EMP;
+
+SELECT DISTINCT DEPTNO
+FROM EMP;
+*/
+
+
+--WHERE 조건과 비교 연산자
+
+SELECT * FROM EMP;
+--SAL COLUME에 3000보다 크거나 같은거 출력
+SELECT * FROM EMP
+WHERE SAL >= 3000;
+
+--SAL이 3000이 아닌 것을 보여라
+SELECT EMPNO, ENAME, SAL FROM EMP
+WHERE SAL<>3000;
+
+
+--문자 데이터 조회
+--ENAME이 fard인것을 찾아라
+SELECT EMPNO, ENAME, SAL
+FROM EMP
+WHERE ENAME='FORD';
+
+SELECT EMPNO, ENAME, SAL
+FROM EMP
+WHERE ENAME='ford'; -- 테이블 내에 저장된 데이터 값은 대소문자를 구분한다.
+
+--날짜 데이터 조회
+--HIREDATE에 '1982/01/01'보다 작거나 같다 라는 것을 출력해라
+SELECT *
+FROM EMP
+WHERE HIREDATE<='1982/01/01';
+
+DESC EMP;
+
+--논리 연산자
+--AND 두 가지 조건을 모두 만족해야만 검색할 수 있다.
+SELECT * FROM emp WHERE deptno=10 AND job='MANAGER';
+
+--OR 두 가지 조건 중에서 한 가지만 만족하더라도 검색할 수 있다.
+SELECT * FROM emp WHERE deptno=10 OR job='MANAGER';
+
+--NOT 조건에 만족하지 못하는 것만 검색한다.
+--deptno가 10이 아닌 것을 출력
+SELECT * FROM emp WHERE NOT deptno=10;
+
+--BETWEEN AND 연산자
+--오라클에서는 특정 범위의 값을 조회하기 위해서는 BETWEEN AND 연산자를 사용할 수 있다.
+--SAL가 2000같거나 크고 3000같거나 작은 거 출력
+SELECT *
+FROM EMP
+WHERE SAL>=2000 AND SAL<=3000;
+
+SELECT *
+FROM EMP
+WHERE SAL BETWEEN 2000 AND 3000;
+
+----SAL가 2000같거나 크고 3000같거나 작은 거가 아닌거 출력
+SELECT *
+FROM EMP
+WHERE SAL NOT BETWEEN 2000 AND 3000;
+--1987년1월1일~ 1987년 12월 31일에 입사한 사람을 출력
+SELECT *
+FROM EMP
+WHERE HIREDATE BETWEEN '1987/01/01' AND '1987/12/31';
+
+--IN 연산자
+--연산자가 반복되는 것 출력
+--동일한 필드가 여러 개의 값 중에 하나인 경우인지를 살펴보기 위해서 
+--비교 연산자와 논리 연산자 OR를 사용하여 복잡하게 쿼리문을 작성하지 않고 IN 연산자를 사용하여 훨씬 간단하게 표현할 수 있다.
+SELECT *
+FROM EMP
+WHERE COMM=300 OR COMM=500 OR COMM=1400;
+
+SELECT *
+FROM EMP
+WHERE COMM IN(300, 500, 1400);
+
+SELECT *
+FROM EMP
+WHERE COMM<>300 AND COMM<>500 AND COMM<>1400;
+
+SELECT *
+FROM EMP
+WHERE COMM NOT IN(300, 500, 1400);
+
+--와일드카드(%) 사용하기
+--ENAME에 F라는 글라가 앞에 있는 이름을 출력
+SELECT *
+FROM EMP
+WHERE ENAME LIKE 'F%';
+
+--ENAME에 A라는 글자가 중간에 있는 이름을 출력
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%A%';
+
+--ENAME에 N이라는 글자가 끝에 있는 이름을 출력
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '%N';
+
+
+--와일드카드(_) 사용하기
+--역시 %와 마찬가지로 어떤 문자가 오든 상관없다는 의미로 사용되는 와일드카드이다.
+--차이점은 %는 몇 개의 문자가 오든 상관없지만 _ 는 단 한 문자에 대해서만 와일드카드 역할을 한다.
+
+--'_'특정한 한 자리를 얘기한다.
+--자리수를 고려한것 
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '_A%';
+
+SELECT *
+FROM EMP
+WHERE ENAME LIKE '__A%';
+
+
+--NOT LIKE 연산자
+--A가 안들어가는 것을 출력
+SELECT *
+FROM EMP
+WHERE ENAME NOT LIKE '%A%';
+
+
+--NULL을 위한 연산자
+--어떤 컬럼을 NULL 즉, 모르는 값과 같다(=)라는 것은 의미상으로 말이 되지 않기 때문에 = 대신 IS NULL 연산자를 사용해야 한다.
+SELECT *
+FROM EMP
+WHERE COMM=NULL; -- NULL 값을 = 연산자로 판단할 수 없다.
+--COMM이 NULL인걸 출력
+SELECT *
+FROM EMP
+WHERE COMM IS NULL; -- EMP 테이블에서 COMM 컬럼이 NULL 사원을 출력한다.
+--COMM이 NULL이 아닌걸 출력
+SELECT *
+FROM EMP
+WHERE COMM IS NOT NULL;
+
+
+--정렬을 위한 ORDER BY절
+--오름차순 정렬은 작은 값부터 큰 값으로 정렬하는 것을 의미한다.(예:1~9, 'A'~'Z') 
+--이를 위해서는 ASC를 칼럼 다음에 기술해야 하는데 만일 생략하게 되면 디폴트로 ASC로 지정되어 있기 때문에 오름차순으로 출력된다.
+
+--SAL의 올림차순으로 정렬
+SELECT *
+FROM EMP
+ORDER BY SAL ASC;
+--ASC를 생략해도 괜찮다 올림 차순으로 시작함
+SELECT *
+FROM EMP
+ORDER BY SAL;
+
+SELECT *
+FROM EMP
+ORDER BY ENAME; -- 문자 데이터의 경우 아스키 코드 값으로 저장되므로 아스키 코드 값을 기준으로 정렬된다.
+
+
+--내림차순 정렬을 위한 DESC
+--내림차순 정렬은 큰 값부터 작은 값으로 정렬을 하는 것이다.(예:9~1, Z~A)
+--
+SELECT *
+FROM EMP
+ORDER BY SAL DESC;
+
+SELECT *
+FROM EMP
+ORDER BY HIREDATE DESC;
+
+--먼저 SAL을 내림차순으로 출력하고 ENAME은 올림차순으로 출력
+SELECT *
+FROM EMP
+ORDER BY SAL DESC, ENAME ASC;
+
+
+--1. 사원 테이블(EMP)에서 가장 최근에 입사한 사원부터 출력하되, 동일한 입사일인 경우에는 사원번호(EMPNO)를 기준으로 오름차순으로 정렬해서 출력하는 SQL문을 작성하세요?
+SELECT * FROM EMP ORDER BY HIREDATE DESC, EMPNO ASC;
+--2. 와일드 카드를 사용하여 사원중에서 이름이 K로 시작하는 사원의 사원번호와 이름을 출력하세요?
+SELECT EMPNO,ENAME FROM EMP WHERE ENAME LIKE 'K%';
+--3. 와일드 카드를 사용하여 이름중에서 K를 포함하는 사원의 사원번호와 이름을 출력 하세요?
+SELECT EMPNO,ENAME FROM EMP WHERE ENAME LIKE '%K%';
+--4. 와일드 카드를 사용하여 이름중에서 끝에서 두번째 글자가 K로 끝나는 사원의 사원번호와 이름을 출력 하세요?
+SELECT EMPNO,ENAME FROM EMP WHERE ENAME LIKE '%K_';
+
