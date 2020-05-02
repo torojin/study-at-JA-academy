@@ -1,9 +1,0 @@
-package collection1;
-
-public class SetEx {
-
-	public static void main(String[] args) {
-
-	}
-
-}

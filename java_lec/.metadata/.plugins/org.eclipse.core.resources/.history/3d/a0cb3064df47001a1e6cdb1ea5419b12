@@ -1,9 +1,0 @@
-package temp;
-
-public class ArgsEx {
-
-	public static void main(String[] args) {
-
-	}
-
-}

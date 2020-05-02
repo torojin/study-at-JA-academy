@@ -1,9 +1,0 @@
-package Shape;
-//정적 바인딩을 동적 바인딩으로 바꿔보자
-public class ShapeMain {
-
-	public static void main(String[] args) {
-
-	}
-
-}

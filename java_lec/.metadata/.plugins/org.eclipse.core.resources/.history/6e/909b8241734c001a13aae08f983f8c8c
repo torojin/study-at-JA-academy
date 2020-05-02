@@ -1,9 +1,0 @@
-package object;
-
-public class ObjectEx5 {
-
-	public static void main(String[] args) {
-
-	}
-
-}

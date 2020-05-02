@@ -1,9 +1,0 @@
-package test16;
-
-public class LoginEx {
-
-	public static void main(String[] args) {
-
-	}
-
-}

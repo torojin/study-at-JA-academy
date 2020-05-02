@@ -1,9 +1,0 @@
-package constructor;
-
-public class ConstructorEx4 {
-
-	public static void main(String[] args) {
-
-	}
-
-}

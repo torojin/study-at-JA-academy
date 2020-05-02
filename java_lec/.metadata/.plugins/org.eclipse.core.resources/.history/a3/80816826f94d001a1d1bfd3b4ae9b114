@@ -1,8 +1,0 @@
-package objectArray;
-
-public class User {
-	//객체(변수) 생성
-	private String name;
-	private String phone;
-	
-}
