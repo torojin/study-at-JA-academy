@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        // 함수선언
+        function testFunc(){
+            // document 객체 / 미리 저장된 객체
+            // box 리턴값 / box1 객체를 가져온다
+            var box = document.getElementById("box1");
+            // 변경할 텍스트 삽입
+            box.innerText="반갑습니다";
+        }
+
+        /*
+        var a = 10;
+        var b = 20;
+        var result = a+b;
+        // alert(result);
+        console.log(result);
+        */
+    </script>
+</head>
+<body>
+    <!-- onclick = javascript event code 삽입 -->
+    <div id="box1" onclick="testFunc()">안녕하세요</div>
+</body>
+</html>

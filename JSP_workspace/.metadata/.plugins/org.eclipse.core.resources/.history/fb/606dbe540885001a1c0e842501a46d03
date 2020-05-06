@@ -1,0 +1,8 @@
+package com.ja.rubato.model;
+
+public class MemberDao {
+	//로그인 처리기능
+	public MemberVo Login(){
+		
+	}
+}

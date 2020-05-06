@@ -1,0 +1,21 @@
+package com.ja.rubato.vo;
+
+import java.util.*;
+
+public class BoardVo {
+	//field 생성
+	private int b_no;
+	private int m_no;
+	private String b_title;
+	private String b_content;
+	private String b_count;
+	private Date b_writedate;
+	
+	B_NO        NOT NULL NUMBER(8)      
+	M_NO                 NUMBER(8)      
+	B_TITLE              VARCHAR2(400)  
+	B_CONTENT            VARCHAR2(1000) 
+	B_COUNT              NUMBER(8)      
+	B_WRITEDATE          DATE      
+
+}

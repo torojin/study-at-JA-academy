@@ -1,0 +1,5 @@
+package com.ja.robato.controller;
+
+public class CommandFactory {
+
+}

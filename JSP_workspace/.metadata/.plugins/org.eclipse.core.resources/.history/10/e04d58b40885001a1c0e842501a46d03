@@ -1,0 +1,10 @@
+package com.ja.rubato.model;
+
+import com.ja.rubato.vo.MemberVo;
+
+public class MemberDao {
+	//로그인 처리기능
+	public MemberVo Login(String login_id, String login_pw){
+		return null;
+	}
+}

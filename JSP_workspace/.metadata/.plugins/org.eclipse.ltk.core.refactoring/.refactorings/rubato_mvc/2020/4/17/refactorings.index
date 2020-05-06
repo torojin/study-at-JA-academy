@@ -1,0 +1,10 @@
+1587602774763	Rename resource 'imf'
+1587603866881	Delete element
+1587604481787	Rename package 'com.ja.robato.controller'
+1587604501250	Rename package 'com.ja.robato.controller.command'
+1587605430453	Move 2 resources to 'WebContent'
+1587606519035	Rename type 'CommandFilter'
+1587608068665	Rename package 'com.ja.rubato.dao'
+1587626337621	Rename type 'ContentVo'
+1587626344893	Rename type 'ContentDateVo'
+1587694077683	Delete element

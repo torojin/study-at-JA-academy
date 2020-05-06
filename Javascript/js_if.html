@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if</title>
+    <script>
+        //조건문
+        a = 10;
+        b = 20;
+        if(a > b){
+            console.log('안녕하세요');
+        }else{
+            console.log('반갑습니다');
+        }
+
+        if(a==10){
+            console.log('a는 10이다..');
+        }
+
+        if(a > 5){
+
+        }else if(a > 10){
+
+        }else{
+
+        }
+        //javascript는 된다. 
+        if(a){
+            console.log("a!!!!!????");
+        }
+        //만약 a 타입이 숫자인 경우에
+        //0 falst.. 1은 true
+        //문자가 존재하느나 존재하지 않냐에 따라 출력되고 안되고
+
+        a = '1111';
+        a = '';
+        a = null;
+        a = undefined;
+        if(a != 0){
+            console.log("되니?");   
+        }
+
+        // test code
+        // if(xxx){
+        //     console.log("xxxx!!!!!!!!!!!!?????");
+        // }
+        if(typeof xxx == 'undefined'){
+            console.log("xxxx!!!!!!!!!!!!?????");
+        }
+
+        //-----------------------------------------------------------------
+        //switch
+        a='농구';
+        switch(a){
+            case '농구':
+                console.log('a는 농구입니다.');
+                break;
+            case '축구':
+                console.log('a는 축구입니다.');
+                break;
+            case '야구':
+                console.log('a는 야구입니다.');
+                break;
+            case '당구':
+                console.log('a는 당구입니다.');
+                break;
+            case '족구':
+                console.log('a는 족구입니다.');
+                break;
+            default:
+            console.log('a는 이도저도 아닙니다.');
+        }
+
+
+        for(var i = 0 ; i < 5 ; i++){
+            console.log('안녕하세요');
+        }
+        for(let j = 0 ; j < 5 ; j++){
+            console.log('안녕하세요');
+        }
+        // java에서는 i라는 변수가 소멸되는데 javascript에서 var로 변수를 선언할 경우 변수값이 소멸되지 않는다.
+        // let은 완벽한 지역변수 선언 변수값이 소멸
+
+        var sum = 0;
+        for(var i = 0; i < 10 ; i++){
+            //sum += i;
+            sum = sum + i;
+        }
+        console.log('0~9까지의 합 : '+sum);
+
+        //for each문 때문에 배열
+        //배열
+
+        var arr = [11,12,13,14,15];
+
+        for(var i = 0; i < 5; i++){
+            console.log(arr[i]);
+        }
+
+        // 향상된 for문이 두가지가 있다.
+        //javascript만 다르다.. 
+        
+        //일반적 향상된 for문
+        //이클립스에서는 인식을 못함
+        //java : for(int data : arr) <-- 이 방식
+        for(var data of arr){
+            console.log(data);    
+        }
+
+        //배열값?을 출력하는것?
+        // index가 출력 / string타입으로 출력
+        for(var index in arr){
+            console.log(index);
+            console.log(arr[index]);
+        }
+
+        //while
+        a = 10
+        //무한반복
+        while(true){
+            a++;
+            //무한반복 탈출
+            if(a >=30){
+                break;
+            }
+            if(a%2 == 0 ){
+                continue;
+            }
+            console.log(a);
+        }
+
+    </script>
+</head>
+<body>
+    <div>안녕하세요</div>
+</body>
+</html>

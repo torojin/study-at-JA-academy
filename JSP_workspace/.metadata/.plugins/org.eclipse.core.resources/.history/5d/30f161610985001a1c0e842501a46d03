@@ -1,0 +1,31 @@
+package com.ja.rubato.model;
+
+import java.sql.*;
+import com.ja.rubato.vo.MemberVo;
+
+public class MemberDao {
+	//DB연동 정보
+	private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private static final String USER = "SCOTT";
+	private static final String PASSWORD = "TIGER";
+	
+	//로그인 처리기능
+	public MemberVo Login(String login_id, String login_pw){
+		MemberVo memberVo = null;//??
+		
+		String query = "SELECT * FROM FB_MEMBER WHERE MEMBER_ID = ? AND MEMBER_PW = ?";
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		ResultSet re = null;
+		
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

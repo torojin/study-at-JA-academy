@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object class</title>
+    <script>
+        //객체
+        //javascript에선 아직까지도 class문법을 잘 사용하지 않는다 / 그래도 있긴 하단걸 알고 있자
+        var student1 = {}; //비어있는 객체 생성
+
+        //***JSON*** 중요!! 
+        //JSON 방식으로 객체를 생성
+        //통신할 때 너무 중요
+        //key를 변수로 선언
+        //key : value, key : value, key : value
+        var student2 = {
+            name : "한조",
+            scort : 70,
+            number : 10,
+            //변수안에 익명의 함수를 넣어서
+            //의미적으로는 메소드
+            test : function(){
+                console.log("학생 메소드 호출");
+            }
+        }; 
+
+        console.log(typeof student2);
+        //key값 호출
+        console.log(student2.name);
+        console.log(student2.scort);
+        console.log(student2.number);
+        //학생 메소드 호출
+        student2.test();
+
+        student2.name = "트레이서";
+        console.log(student2.name);
+
+        //없는데 된다
+        //이렇게 쓰는 경우는 흔치않다
+        student2.aaa = "안녕하세요";
+        console.log(student2.aaa);
+
+        //객체 딕셔너리, Map 컬렉션 형태의 사용
+        //hashMap, 딕셔너리 형태로 사용가능???
+        //key를 문자열로 해야 hashMap이 된다
+        var dic = {
+            "a" : 10,
+            "b" : 20,
+            "c" : "안녕하세요"
+        }
+
+        console.log(dic.a); //객체 형태로 사용할 때
+        console.log(dic["a"]); //hashMap형태로 쓸 때는 이렇게 배열처럼 가져오는게 좋다.
+
+//-----------------------------------------------------------------------------------
+
+        //javascript적인 배열 객체 선언 방법
+        //함수로 객체를 만든다
+        //객체의 표현법 / 대문자로 선언하는게 일반적인 경우다
+
+        //var 지역변수를 선언하는것
+        //var이 없는 것은 멤버변수를 선언하는 방식
+        //지역 변수 소멸
+        function Student(){
+            console.log("학생 호출됨");
+            //변수 선언
+            //3가지가 다 다른 메모리를 가지고 실행?
+            var a = 10; //지역변수 / 추가됐다가 빠져나간다? / 이건 그냥 변수이다
+            console.log("test : "+ window.a); 
+            console.log("test : "+ this.a);
+            console.log("test : "+ a);
+            b = 20; //멤버변수 추가 / 주체가 window가 된다 / 완벽하게 추가된다. / window 멤버 추가
+            this.c = 30; //객체 this에 들어가고 / this 멤버 추가
+        }        
+        //함수 호출
+        //실행주체 window가 호출 한것도 된다
+        Student(); //window 객체로 실행한 것 / 이렇게 호출하면 안된다
+
+        //함수에다가 new를 붙일수 있다
+        // new Student(); //새로운 메모리 인스턴스를 생성해서 실행한것 
+        
+        var s1 = new Student(); //객체 메모리를 만들고 걔가 주체가 되서 호출 들어갔다가 빠져나간다 / 이렇게 호출
+
+        console.log(window.c);
+
+        // console.log(s1.c);
+
+        // console.log(s1.b);// window에 들어간것
+
+        //에러 발생 
+        //var로 선언한것과 안한것에 차이가 있다
+
+        // console.log(a);
+
+        console.log(b);
+
+
+        //함수 안에 있을 때가 다른듯..?
+        //전역변수여서
+        var cc = 40;
+        dd = 50;
+
+        console.log(cc); //호출된다
+        console.log(dd);
+
+        console.log("test2 : "+this.cc);
+        console.log("test2 : "+window.cc);
+
+        //a하고 b는 어디에 속하는 것인가?
+    
+
+        /*
+        //javascript는 window라는 객체가 있는데 거기의 멤버변수로서 선언이 된다
+        //java의 오브젝트랑 비슷한건가???
+
+        var c =20;
+        d = 30;
+
+        fff = 30;
+
+        console.log(c);
+        //window라는 인스턴스에 변수를 추가한다는 의미..?
+        //글로벌과 관련된 객체
+        console.log(window.fff);
+
+        //this는 지금 실행되는 코드의 주체
+        console.log(this.fff);
+        */
+
+        console.log("------------------------------");
+        //------------------------------------------------------------------------------
+
+        //객체 생성 예제
+        //이렇게 쓰면 된다 / 객체 메모리를 생성해서 넣겠다
+        //생성자 겸 변수 선언
+        function PhoneData(a, b, c){
+            this.name = a;
+            this.number = b;
+            this.birth = c;
+            //메소드 처럼 선언?
+            this.test = function(){
+                console.log(this.name + this.number + this.birth);
+            }
+        }
+        //새로운 인스턴스가 또 생성된다
+        var p1 = new PhoneData("한조","111","000");
+        var p2 = new PhoneData("트레이서","222","333");
+
+        console.log(p1.name);
+        console.log(p2.name);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.ja.rubato.vo;
+
+public class ContentDataVo {
+
+}

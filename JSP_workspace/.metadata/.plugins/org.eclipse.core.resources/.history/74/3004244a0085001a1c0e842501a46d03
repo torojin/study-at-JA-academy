@@ -1,0 +1,83 @@
+package com.ja.rubato.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ja.rubato.controller.command.CommandHandler;
+import com.ja.rubato.controller.CommandFactory;
+
+
+/**
+ * Servlet implementation class ControllerUsingURI
+ */
+//@WebServlet("/ControllerUsingURI")
+public class ControllerUsingURI extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	//멤버 변수 생성
+	private CommandFactory commandFactory;	
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ControllerUsingURI() {
+        super();
+        commandFactory = new CommandFactory();
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("넘어온 명령어 : "+request.getRequestURI()); 
+		String command = request.getRequestURI();
+	
+		command = command.substring(request.getContextPath().length()); //Server.xml의 context의 path를 자름 / 자른값을 다시 command에다 넣어주겠다
+		
+		System.out.println("명령어 : "+command);
+		
+		CommandHandler handler = commandFactory.getCommandHandler(command);	//다형성에 의해서 적합한 핸들러가 들어감 / ex)aaa.do를 생성안했을 경우 
+		
+		//최소한의 예외처리
+		String view = null;
+		
+		//null이 아닌 경우에만 실행
+		if(handler != null) {
+			view = handler.process(request, response);//다형성에 의해서 실직적인 상속받은 형태를 출력 / 오버라이딩 된 process가.. 
+		}else {
+			//ex)aaa.do를 생성안했을 경우 handler가 null값이 들어가서 아래 구문 출력
+			System.out.println("[경고]명령어에 매핑된 객체가 없습니다");
+		}
+		
+		//view가 null이 아니면
+		if(view != null) {
+			//API 이 문자로 시작하느냐 / 시작이 redirect냐
+			if(view.startsWith("redirect:")) {
+				//command쪽에서 redirect시킬때...
+				view = view.substring("redirect:".length());
+				response.sendRedirect(view);
+			}else{
+				//command쪽에서 fowarding되는 것
+				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+				dispatcher.forward(request, response);
+			}
+		}	
+	
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

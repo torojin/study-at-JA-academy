@@ -1,0 +1,50 @@
+package com.ja.rubato.model;
+
+import java.sql.*;
+import java.util.ArrayList;
+
+import com.ja.rubato.vo.BoardVo;
+
+public class BoardDao {
+	//DB연동 처리
+	private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private static final String USER = "SCOTT";
+	private static final String PASSWORD = "TIGER";
+	
+	//게시판 글 처리
+	//ArrayList로 리턴 타입 BoardVo의 getter을 리턴하겠다..!? 
+	//??????? 다시 공부할 것
+	public ArrayList<BoardVo> BoardListAll(){
+		ArrayList<BoardVo> list = new ArrayList<BoardVo>();
+		
+		String query = "SELECT * FROM ROBATO_BOARD ORDER BY M_NO DESC";
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		
+		B_NO        NOT NULL NUMBER(8)      
+		M_NO                 NUMBER(8)      
+		B_TITLE              VARCHAR2(400)  
+		B_CONTENT            VARCHAR2(1000) 
+		B_COUNT              NUMBER(8)      
+		B_WRITEDATE          DATE           
+
+		
+		//로직처리
+		try {
+			int b_no = rs.getInt("B_NO");
+			int m_no = rs.getInt("M_NO");
+			String b_title = rs.getString("B_TITLE");
+			String b_content = rs.getString("B_CONTENT");
+			int b_count = rs.getInt("B_COUNT");
+			java.util.Date b_writedate = rs.getDate("B_WRITEDATE");
+					
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+	}
+}

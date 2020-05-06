@@ -1,0 +1,15 @@
+package com.ja.rubato.vo;
+
+public class ContentDataVo {
+	//field 생성
+	private MemberVo memberVo;
+	private BoardVo boardVo;
+	
+	//constructor 생성
+	public ContentDataVo(){
+		super();
+	}
+	public ContentDataVo(MemberVo memberVo, BoardVo boardVo) {
+		
+	}
+}

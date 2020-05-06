@@ -1,0 +1,5 @@
+package com.ja.rubato.controller.command;
+
+public class BoardListProcessHandler {
+
+}

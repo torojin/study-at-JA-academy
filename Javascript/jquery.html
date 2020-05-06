@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        //javascript 기준으로 $나오면 jQuery
+        //javaScript는 시작점이 시작되고 문서가 로드 된다.
+        //jQuery는 문서가 먼저 로드되고 시작점이 시작된다.
+        /*
+        // $ = 함수명
+        function test(){
+            alert("안녕하세요");
+        }
+        
+        // var te = $(document);
+        //ready라는 함수 call back 함수를 넣을 수 있다
+        //시작 시점이 될 수 있다
+        // te.ready(test);
+        // test();
+        */
+        /*
+        //위에 껄 한줄로 쓴게 아래 구문이다
+        //옛날 버전
+        $(document).ready(function(){
+            alert("안녕하세요");
+        });
+        */
+
+
+        //요새 버전
+        $(function(){
+            //문서가 로드되고 그림까지 그리고 호출되는 곳
+            // alert("안녕하세요 반갑습니다");
+            // $("h1").css("color","red");
+            
+            // $("#box1").css("color","blue"); //jQuery
+            
+            // var box1 = document.getElementById("box1"); //바닐라 js
+            // box1.style.color = "blue"
+
+            // document.getElementById("box1").style.color = "blue"; // 바닐라 js 한줄로 표현
+
+            //클래스 선택 jQuery
+            // $(".c_box").css("color","red");
+            // $(".c_box").css("font-size","30px");
+
+            /*
+            var boxList = document.getElementsByClassName("c_box");
+            
+            for(box of boxList){
+                box.style.color = "red";
+                box.style.fontSize = "30px";
+            }
+            */
+            //그냥 하나로 뽑아온다
+            // document.querySelector("#box1").style.color = "green";
+            //배열로 가져옴
+            document.querySelectorAll(".c_box")[1].style.color = "hotpink";
+
+            //jQuery selector
+            $("#u1 li").css("color","red");
+
+            
+            //동적으로... 함수 이벤트 연결...
+            // $("#btn1").on("click",addLI);
+            // $("#btn1").on("click",function(){
+            //     $("<li></li>").html("li").appendTo("#u1");
+            // });
+            
+
+            document.getElementById("btn1").onclick = addLI;
+            
+
+        });
+        //jQuery핵심 / 선택하고 바꾸겠다!
+        //모든 h1를 뽑아낸다
+        //바닐라 js로 해보자 ....왜 안되지..?
+        function color(){
+            // alert("test");
+            var box1 = document.getElementById("box1");
+            box1.style.color = "blue";
+            
+        }
+        color();
+
+       //버튼누르면 li리스트 추가
+        function addLI(){
+            // $("<li></li>").html("추가된거").appendTo("#u1");
+            // $("<li>추가된거</li>").appendTo("#u1")
+            $("<li></li>").html("li").appendTo("#u1");
+            
+            /*
+            var li = document.createElement("li");
+            li.innerHTML="추가된거";
+            document.getElementById("u1").appendChild(li);
+            */
+        }
+
+        function changeContent(){
+            // $("#l1").html("<h1>바뀐 내용...</h1>"); //html 코드로 내용을 삽입
+            $("#l1").text("<h1>바뀐 내용...</h1>");// text로 바꾸겠다
+
+            //바닐라 js
+            // document.getElementById("l1").innerHTML = "<h1>바뀐 내용...</h1>"; //일반적으로 사용 안한다 create Element로 사용하는게 일반적
+            // document.getElementById("l1").innerText = "<h1>바뀐 내용...</h1>";
+        }
+
+        //클래스 추가 함수 선언
+        function addClassAttr(){
+            //class = aaaa가 추가됨
+            $("#box1").addClass("aaaa");
+            $("#box1").addClass("bbbb");
+            $("#box1").addClass("cccc");
+        }
+        //클래스 삭제 함수 선언
+        function removeClassAttr(){
+            $("#box1").removeClass("bbbb");
+        }
+
+        //일반 속성 추가 함수 선언
+        function addAttr(){
+            $("#box1").attr("qqqq", "vvvv");
+        }
+
+        //속성값 가져오기 함수 선언
+        function getAttr(){
+            //값을 넣으면 setter
+            //값을 안넣으면 getter
+            var value = $("#box1").attr("qqqq");
+            alert(value);
+        }
+
+        // javascript는 일반적인 API기준에서 많이 벗어난다 / getter와 setter가 명확하지 않다
+        function testText(){
+            // $("#box1").text("testest"); //값을 주면 setter
+            
+            var value = $("#box1").text("test");//값을 안주면 getter
+            // alert(value);
+        }
+        //일반 속성 제거 함수 선언
+        function removeAttr(){
+            $("#box1").removeAttr("qqqq");
+        }
+
+        //css color 값 가져오기 함수 선언
+        function getCssValue(){
+            // $("#box1").css("color","red"); //setter로 이용
+            var value = $("#box1").css("color"); //getter로 이용
+            alert(value);
+        }
+
+        //객체 제거 함수 선언
+        function removeElement(){
+            $("#box1").remove();
+        }
+
+        //내부 컨텐트 제거? 함수 선언
+        function emptyContent(){
+            $("#box1").empty();
+        }
+
+        //객체 추가테스트 함수 선언
+        function addElement(){ 
+            // $("<li>추가된 객체...</li>").appendTo("#u2"); //선택된거의 자식 / 아래부터 삽입
+            // $("<li>추가된 객체...</li>").prependTo("#u2"); //선택된거의 자식 / 위부터 삽입
+            // $("<li>추가된 객체...</li>").insertAfter("#l2"); //선택된거의 동급 / 대상의 밖에서 뒤쪽에 삽입
+            $("<li>추가된 객체...</li>").insertBefore("#l2"); //선택된거의 동급 / 대상의 밖에서 앞쪽에 삽입 
+        }
+    </script>
+    <style>
+        .aaaa{
+            font-size: 70px;
+            
+        }
+        .bbbb{
+            background-color: cadetblue;
+        }
+        .cccc{
+            color:darkorange
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">안녕하세요</div>
+    <h1>안녕하세요</h1>
+    <div class="c_box">반갑습니다</div>
+    <div class="c_box">반갑습니다</div>
+
+    <ul id="u1">
+        <li>안녕하세요</li>
+        <li id="l1">안녕하세요</li>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+    </ul>
+    <ul id="u2">
+       <li>반갑습니다</li> 
+       <li id="l2">반갑습니다</li> 
+       <li>반갑습니다</li> 
+       <li>반갑습니다</li> 
+       <li>반갑습니다</li> 
+       <li>반갑습니다</li> 
+    </ul>
+
+    <!-- <div id="btn1" onclick="addLI()">버튼</div> -->
+    <div id="btn1">버튼</div>
+    <div id="btn2" onclick="changeContent()">내용바꾸기 버튼</div>
+    <div onclick="addClassAttr()">클래스 속성 추가</div>
+    <div onclick="removeClassAttr()">클래스 속성 삭제</div>
+    <div onclick="addAttr()">일반속성 추가</div>
+    <div onclick="getAttr()">속성값 가져오기</div>
+    <div onclick="testText()">내부 text 조작..?</div>
+    <div onclick="removeAttr()">일반 속성 제거</div>
+    <div onclick="getCssValue()">css color 값 가져오기</div>
+    <div onclick="removeElement()">객체 제거</div>
+    <div onclick="emptyContent()">내부 컨텐트 제거?</div>
+    <div onclick="addElement()">객체 추가테스트</div>
+</body>
+</html>

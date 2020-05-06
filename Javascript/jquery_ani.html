@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: darkred;
+        }
+    </style>
+    <script>
+        //
+        $(function(){
+            $("#btn1").on("click",function(){
+                $("#box1").toggle(500);
+            });
+        });
+        //보이기 함수 선언
+        //프론트엔드쪽으로 할꺼면 css로 구현하는게 맞다
+        function show(){
+            $("#box1").show(1000); // API
+        }
+        function hide(){
+            $("#box1").hide(1000);
+        }
+        //slideDown() 함수 선언
+        function slideDown(){
+            $("#box1").slideDown(500);
+        }
+        //slideUp() 함수 선언
+        function slideUp(){
+            $("#box1").slideUp(500);
+        }
+        //slideToggle() 함수 선언
+        function slideToggle(){
+            $("#box1").slideToggle(300);
+        }
+        //fadeToggle() 함수 선언
+        function fadeToggle(){
+            $("#box1").fadeToggle(1000);
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <input id="btn1" type="button" value="toggle">
+    <input onclick="show()" type="button" value="보이기">
+    <input onclick="hide()" type="button" value="숨기기">
+    <input onclick="slideDown()" type="button" value="슬라이드 다운">
+    <input onclick="slideUp()" type="button" value="슬라이드 업">
+    <input onclick="slideToggle()" type="button" value="슬라이드 토글">
+    <input onclick="fadeToggle()" type="button" value="fade">
+    
+</body>
+</html>

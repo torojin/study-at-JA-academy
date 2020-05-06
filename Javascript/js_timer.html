@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: darkcyan;
+        }
+    </style>
+    <script>
+        var sizeX = 200;
+        function incFunc(){
+            if(sizeX >= 500){
+                clearInterval(incHandler);
+                //값 초기화 시켜줌
+                incHandler = null;
+            }
+
+            var box1 = document.getElementById("box1");
+
+            sizeX += 1;
+            box1.style.width = sizeX + "px";
+
+        }
+
+        var incHandler = null; //메모리 소멸안시키기 위해서 변수를 밖으로 뺌
+        function increase(){
+            if(desHandler != null){
+                clearInterval(desHandler);
+                desHandler = null;
+            }
+
+            if(incHandler != null){
+                return;
+            }
+            incHandler = setInterval(incFunc, 1000/60);
+        }
+
+        //마우스가 빠져나가면 인터벌 시킴
+        function decFunc(){
+            if(sizeX <= 200){
+                clearInterval(desHandler); //종료시킴
+                desHandler = null;
+                return;
+            }
+            sizeX -= 10;
+            
+            var box1 = document.getElementById("box1");
+            box1.style.width = sizeX + "px";
+        }
+        //마우스가 빠져나가면
+        
+        var desHandler = null; 
+        function decrease() {
+
+            if(incHandler != null){
+                clearInterval(incHandler);
+                incHandler = null;
+            }
+
+            if(desHandler != null){
+                return;
+            }
+            desHandler = setInterval(decFunc, 1000/60);
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div onmouseout="decrease()" onmouseover="increase()" id="box1"></div>
+</body>
+</html>
