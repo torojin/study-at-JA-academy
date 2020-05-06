@@ -1,0 +1,16 @@
+package polymorphism;
+
+public class SamsungTv {
+	public void powerOn() {
+		System.out.println("삼성 --- 전원 ON");
+	}
+	public void powerOff() {
+		System.out.println("삼성--- 전원 OFF");
+	}
+	public void volumeUp() {
+		System.out.println("삼성--- 소리 UP");
+	}
+	public void volumeDown() {
+		System.out.println("삼성--- 소리 DOWN");
+	}
+}

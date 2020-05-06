@@ -1,0 +1,14 @@
+package com.ja.reference.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class MappingTest {
+	//POJO의 따른 경량화
+	
+	@RequestMapping("/test1")
+	public void test1() {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.ja.reference.mapper;
+
+public interface BoardSQLMapper {
+
+}

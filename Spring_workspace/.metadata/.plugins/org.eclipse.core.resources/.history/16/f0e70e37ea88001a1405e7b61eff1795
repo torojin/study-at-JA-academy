@@ -1,0 +1,9 @@
+package com.ja.aoptest;
+
+import java.util.*;
+
+public class BoardDao {
+	public ArrayList<String> selectAll() {
+		
+	}
+}

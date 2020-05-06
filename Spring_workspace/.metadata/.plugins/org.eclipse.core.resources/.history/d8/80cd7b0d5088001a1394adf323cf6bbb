@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+ 
+ <!-- lazy-init / true :get을 했을 때 호출 / fales : 처음부터 생성 -->
+ <!-- scope는 기본값이 싱글톤 / 원래 팩토리 패턴이 prototype..? / 쓸일은 없다-->
+ <!--
+	<bean id="tv" class="polymorphism.SamsungTv" init-method="initMethod" lazy-init="fales" scope="prototype"></bean> 
+	<bean id="xxx" class="polymorphism.LgTv"></bean> -->
+<!-- 	<bean id="tv" class="polymorphism.LgTv"></bean> -->
+	
+		
+	<!-- DI Depandence Injection IO가 구성된다..? -->
+	<!-- //생성자로 주입할거냐, setter로 주입할 거냐의 차이 -->
+	<!-- constructor-arg : 먼저 실행시킴 / 생성자 매개변수에 들어가는 값도 넣는듯..? 매개변수 값이라고 생각해도됨 / 생성자 인젝션이라 함
+		ref=""는 참조시켜서..
+		매개변수에 맞게 생성자를 호출..?
+		생성자 방식
+	<bean id="tv" class="polymorphism.SamsungTv">
+		<constructor-arg ref="apple"></constructor-arg>
+		<constructor-arg value="10000"></constructor-arg>
+	</bean>
+	-->
+	
+	<!-- setter 방식 이용 설정 -->
+	<!-- 
+	<bean id="tv" class="polymorphism.SamsungTv">
+		<property name="speaker" ref="sony"></property>
+	</bean>
+
+	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
+	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+	
+	
+	<bean id="xxx" class="java.lang.String">
+		<constructor-arg value="222.111.111.111"></constructor-arg>
+	</bean>
+	 -->
+	
+	<!-- XML 방식 / 어노테이션 방식을 많이 사용 -->
+	
+</beans>

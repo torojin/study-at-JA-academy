@@ -1,0 +1,11 @@
+package com.ja.aoptest;
+
+import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Service;
+
+@Service
+public class LogAdviceAnnotation {
+	public void printLog(JoinPoint jp) {
+		System.out.println(jp.getSignature().getName()+"] 실행 전");
+	}
+}

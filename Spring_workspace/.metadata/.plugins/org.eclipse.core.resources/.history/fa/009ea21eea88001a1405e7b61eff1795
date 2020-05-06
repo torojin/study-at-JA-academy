@@ -1,0 +1,7 @@
+package com.ja.aoptest;
+
+public class BoardDao {
+	public String selectAll() {
+		
+	}
+}

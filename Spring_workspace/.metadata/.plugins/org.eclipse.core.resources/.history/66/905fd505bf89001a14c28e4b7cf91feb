@@ -1,0 +1,17 @@
+package com.ja.reference.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/board/*")
+public class MappingTest2 {
+
+	//MappingTest.java의 test1이 실행된다
+	@RequestMapping("/test1")
+	public String test1() {
+		System.out.println("안녕하세요1");
+		
+		return "test1";
+	}
+}

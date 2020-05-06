@@ -1,0 +1,37 @@
+package polymorphism;
+
+//TV 인터페이스 상속
+public class LgTv implements TV {
+	public void turnOn() {
+		System.out.println("엘지--- 전원 ON");
+	}
+	public void turnOff() {
+		System.out.println("엘지--- 전원 OFF");
+	}
+	public void soundUp() {
+		System.out.println("엘지--- 소리 UP");
+	}
+	public void soundDown() {
+		System.out.println("엘지--- 소리 DOWN");
+	}
+	@Override
+	public void powerOn() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void powerOff() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void volumUp() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void volumDown() {
+		// TODO Auto-generated method stub
+		
+	}
+}

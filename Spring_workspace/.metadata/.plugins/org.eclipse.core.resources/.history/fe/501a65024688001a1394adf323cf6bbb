@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <!-- lazy-init / true :get을 했을 때 호출 / fales : 처음부터 생성 -->
+ <!-- scope는 기본값이 싱글톤 / 원래 팩토리 패턴이 prototype..? / 쓸일은 없다-->
+	<bean id="tv" class="polymorphism.SamsungTv" init-method="initMethod" lazy-init="fales" scope="prototype"></bean> 
+	<bean id="xxx" class="polymorphism.LgTv"></bean>
+<!-- 	<bean id="tv" class="polymorphism.LgTv"></bean> -->
+	<!-- DI Depandence Injection IO가 구성된다..? -->
+</beans>

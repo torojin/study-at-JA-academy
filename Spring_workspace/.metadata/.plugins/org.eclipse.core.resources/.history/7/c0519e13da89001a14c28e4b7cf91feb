@@ -1,0 +1,25 @@
+package com.ja.reference.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ja.reference.service.BoardService;
+
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+	
+	//Service를 주입시켜줌
+	@Autowired
+	private BoardService boardService;
+	
+	@RequestMapping("/read_content_page.do")
+	public String mainPage(int b_no) {
+		
+		//파라미터가 넘어옴
+		boardService.getContent(b_no);
+		
+		return "read_content_page";
+	}
+}

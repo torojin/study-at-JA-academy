@@ -1,0 +1,13 @@
+package com.ja.aoptest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//Annotation 방식
+@Controller
+public class BoardController {
+	@RequestMapping("/main_page.do")
+	public String mainPage() {
+		return "main_page";
+	}
+}

@@ -1,0 +1,9 @@
+package com.ja.aoptest;
+
+import org.aspectj.lang.JoinPoint;
+
+public class LogAdviceAnnotation {
+	public void printLog(JoinPoint jp) {
+		System.out.println(jp.getSignature().getName()+"] 실행 전");
+	}
+}

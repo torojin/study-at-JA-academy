@@ -1,0 +1,25 @@
+package com.ja.aoptest;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//Annotation 방식 사용
+
+public class BoardServiceImpl {
+	//주입해서 쓰는 방식
+	@Autowired
+	private BoardDao boardDao;
+	
+	//controller에서는 이걸 호출한다
+	public ArrayList<String> getBoardList(){
+		//ArrayList<String> list = new BoardDao().selectAll();
+		
+		//주입해서 쓰는 방식
+		ArrayList<String> list = boardDao.selectAll();
+		
+		return list;
+		
+	}
+}

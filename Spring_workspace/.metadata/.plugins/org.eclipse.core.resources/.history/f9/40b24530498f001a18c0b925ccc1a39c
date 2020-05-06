@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원가입</h1>
+<form action="./join_member_process.do" method="get">
+	ID : <input type="text" name="member_id" placeholder="email를 입력하세요"><br>
+	PW : <input type="password"><br>
+	Nick : <input type="text"><br>
+	Gender : <input type="radio" name="member_sex" value="M" >남
+			 <input type="radio" name="member_sex" value="W" checked="checked">여<br>
+	Hobby : <input type="checkbox">농구 
+			<input type="checkbox">축구 
+			<input type="checkbox">야구 
+			<input type="checkbox">독서 <br>
+	<input type="submit" value="회원가입">
+</form>
+</body>
+</html>

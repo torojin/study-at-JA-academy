@@ -1,0 +1,44 @@
+package polymorphism;
+
+//TV 인터페이스 상속
+public class SamsungTv implements TV {
+	
+	private SonySpeaker speaker;
+	
+	//생성자 생성
+	public SamsungTv() {
+		System.out.println("삼성 기본 생성자 호출됨");
+	}
+	
+	//sonySpeaker를 받을 수 있는 생성자를 만들겠다
+	public SamsungTv(SonySpeaker speaker) {
+		this.speaker = speaker;
+		System.out.println("삼성 ---기본 생성자 호출됨");
+	}
+	
+	@Override
+	public void powerOn() {
+		System.out.println("삼성 --- 전원 ON");
+	}
+	@Override
+	public void powerOff() {
+		System.out.println("삼성--- 전원 OFF");
+	}
+	@Override
+	public void volumUp() {
+		//System.out.println("삼성--- 소리 UP");
+		speaker = new SonySpeaker();
+		speaker.volumeUp();	
+	}
+	@Override
+	public void volumDown() {
+		//System.out.println("삼성--- 소리 DOWN");
+		speaker = new SonySpeaker();
+		speaker.volumeDown();
+		
+	}
+	public void initMethod() {
+		System.out.println("삼성--- 초기화 코드...");
+	}
+}
+

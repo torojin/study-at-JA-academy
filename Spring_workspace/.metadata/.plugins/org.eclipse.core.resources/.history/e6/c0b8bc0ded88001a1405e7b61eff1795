@@ -1,0 +1,11 @@
+package com.ja.aoptest;
+
+import java.util.ArrayList;
+
+public class BoardServiceImpl {
+	
+	public ArrayList<String> getBoardList(){
+		ArrayList<String> list = new BoardDao().selectAll();
+		
+	}
+}

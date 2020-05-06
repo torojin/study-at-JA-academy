@@ -1,0 +1,4 @@
+
+4월 29, 2020 17:05:55.37 NEW SESSION
+4월 29, 2020 17:05:55.37 [5176:12316:0429/170555.373:ERROR:browser_switcher_service.cc(238)] XXX Init()
+4월 29, 2020 17:05:59.59 [5176:12316:0429/170559.590:ERROR:device_event_log_impl.cc(162)] [17:05:59.590] Bluetooth: bluetooth_adapter_winrt.cc:1055 Getting Default Adapter failed.
