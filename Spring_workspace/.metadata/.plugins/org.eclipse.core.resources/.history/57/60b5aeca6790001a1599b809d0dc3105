@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 페이지</title>
+</head>
+<body>
+<h1>회원가입 페이지</h1>
+<form action="./join_member_process.do">
+	ID : <input type="text" name="member_id"><br>
+	PW : <input type="password" name="member_pw"><br>
+	NICK : <input type="text" name="member_nick"><br>
+	Gender : <input type="text" name="member_gender" value="M">남<br>
+			<input type="text" name="member_gender" value="W">여<br>
+	Hobby :<input type="text" name="member_hobby" value="1">농구<br>
+			<input type="text" name="member_hobby" value="2">축구<br>
+			<input type="text" name="member_hobby" value="3">야구<br>
+			<input type="text" name="member_hobby" value="4">독서<br>
+</form>
+</body>
+</html>

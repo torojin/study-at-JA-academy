@@ -1,0 +1,5 @@
+package com.hm.freeboard.mapper;
+
+public interface MemberSQLMapper {
+
+}
