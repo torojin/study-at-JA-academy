@@ -1,8 +1,0 @@
-package com.ja.aoptest;
-
-import org.springframework.stereotype.Controller;
-
-//Annotation 방식
-public class BoardController {
-
-}

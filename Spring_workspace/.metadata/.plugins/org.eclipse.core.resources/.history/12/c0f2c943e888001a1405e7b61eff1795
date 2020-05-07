@@ -1,7 +1,0 @@
-package com.ja.aoptest;
-
-public class Test {
-	public void aaa() {
-		
-	}
-}

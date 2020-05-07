@@ -1,6 +1,0 @@
-package com.ja.aoptest;
-
-@Controller
-public class BoardController {
-
-}

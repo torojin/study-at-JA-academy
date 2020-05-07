@@ -1,8 +1,0 @@
-package com.ja.reference.vo;
-
-//필요에 따라서 데이터를 생성을 해야하는 클래스
-//계속 유지되어야하는 클래스가 아니다
-//그때 그때 생성되는 데이터
-public class MemberVo {
-
-}

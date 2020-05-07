@@ -1,6 +1,0 @@
-package com.ja.reference.service;
-
-public class BoardService {
-	//service는 추상적인 개념이 들어가야한다 (select와 같은 명칭을 사용하면 안됨)
-	//DAO에서는 아이디 패스워드같은 정보를 뽑아내는 것 / 정확한 개념의 명칭을 사용해야한다(select 같은 개념)
-}

@@ -8,9 +8,10 @@
 </head>
 <body>
 <h1>로그인</h1>
-<form action="">
-	ID : <input type="text"><br>
-	PW : <input type="password"><br>
+<%-- Spring에서 name은 데이터베이스 명칭과 동일하게 하는게 좋다 --%>
+<form action="./login_process.do" method="post">
+	ID : <input type="text" name="member_id"><br>
+	PW : <input type="password" name="member_pw"><br>
 	<input type="submit" value="로그인">
 </form>
 <a href="./join_member_page.do">회원가입</a>

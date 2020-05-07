@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>회원가입</h1>
-<form action="./join_member_process.do" method="get">
+<form action="./join_member_process.do" method="post">
 	ID : <input type="text" name="member_id" placeholder="email를 입력하세요"><br>
 	PW : <input type="password" name="member_pw"><br>
 	Nick : <input type="text" name="member_nick"><br>
