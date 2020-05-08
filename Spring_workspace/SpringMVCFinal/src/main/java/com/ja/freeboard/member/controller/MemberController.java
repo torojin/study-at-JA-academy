@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ja.freeboard.member.service.MemberServiceImpl;
@@ -81,7 +82,12 @@ public class MemberController {
 		}
 	}
 	
-	
-	
+	//로그아웃 기능
+	@RequestMapping("/logout_process.do")
+	public String logoutProcess(HttpSession session) {
+		session.invalidate();
+		return "redirect:/board/main_page.do";
+	}
+		
 	
 }

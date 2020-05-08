@@ -48,5 +48,37 @@ public class BoardController {
 		return"redirect:./main_page.do";
 	}
 	
+	//글 읽기
+	@RequestMapping("/read_content_page.do")
+	public String readContentPage(int board_no, Model model) {
+		
+		Map<String,Object> map = boardService.getBoard(board_no);
+		
+		//model에 넣어줌?
+		model.addAttribute("data",map); //page쪽에 $표시 이름
+		
+		return "board/read_content_page";
+	}
+	
+	//글 삭제 처리
+	@RequestMapping("/delete_content_process.do")
+	public String deleteContentProcess(int board_no) {
+		boardService.deleteContent(board_no);
+		return "redirect:/board/main_page.do"; 
+	}
+	
+	//글 수정 페이지
+	@RequestMapping("/update_content_page.do")
+	public String updateContentPage(int board_no, Model model) {
+		model.addAttribute("data",boardService.getBoard(board_no));
+		return "board/update_content_page";
+	}
+	
+	//글 수정 기능
+	@RequestMapping("/update_content_process.do")
+	public String updateContentProcess(BoardVo boardVo) {
+		boardService.updateContent(boardVo);
+		return "redirect:/board/main_page.do";
+	}
 	
 }

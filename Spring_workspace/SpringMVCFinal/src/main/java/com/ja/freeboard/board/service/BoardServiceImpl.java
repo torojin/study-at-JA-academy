@@ -44,4 +44,37 @@ public class BoardServiceImpl {
 		}
 		return list;
 	}
+	
+	//글 읽기
+	public Map<String, Object> getBoard(int board_no) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		boardSQLMapper.updateReadCount(board_no); //따로 분리해서 사용도 가능
+		
+		//board_no를 받아서 연결..?
+		BoardVo boardVo = boardSQLMapper.selectByNo(board_no);
+		MemberVo memberVo = memberSQLMapper.selectByNo(boardVo.getMember_no());
+		
+		map.put("memberVo", memberVo);
+		map.put("boardVo", boardVo);
+		
+		return map;
+	}
+	
+	//삭제 기능
+	public void deleteContent(int board_no) {
+		boardSQLMapper.delectByNo(board_no);
+	}
+	
+	//글 수정
+	public void updateContent(BoardVo boardVo) {
+		boardSQLMapper.update(boardVo);
+	}
+	
 }
+
+
+
+
+
+

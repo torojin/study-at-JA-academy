@@ -21,4 +21,6 @@ public interface BoardSQLMapper {
 	//글 쓰기 기능
 	public void update(BoardVo vo);
 	
+	//글 조회수 기능
+	public void updateReadCount(int no);
 }

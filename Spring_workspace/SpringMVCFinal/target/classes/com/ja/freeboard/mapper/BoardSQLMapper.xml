@@ -51,6 +51,15 @@
 	]]>
 	</update>
 	
+	<!-- 글 조회 기능 -->
+	<!-- 변수는 인터페이스에서 받아옴 -->
+	<update id="updateReadCount">
+	<![CDATA[
+		UPDATE FB_BOARD 
+		SET BOARD_READCOUNT = BOARD_READCOUNT+1 
+		WHERE BOARD_NO = #{no}
+	]]>
+	</update>
 </mapper>
 
 
