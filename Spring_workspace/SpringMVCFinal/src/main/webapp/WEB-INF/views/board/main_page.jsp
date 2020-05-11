@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,25 @@
 					      <td><a href="${pageContext.request.contextPath}/board/read_content_page.do?board_no=${xxx.boardVo.board_no}">${xxx.boardVo.board_title }</a></td>
 					      <td>${xxx.memberVo.member_nick }</td>
 					      <td>${xxx.boardVo.board_readcount }</td>
-					      <td>${xxx.boardVo.board_writedate }</td>
+					      <%-- 
+					      <%
+					      	//java Code로 데이트 받아오는 타입 변환시키기
+					      	java.util.Map<String, Object> map = (java.util.Map<String, Object>)pageContext.getAttribute("xxx");
+					      
+					      	com.ja.freeboard.vo.BoardVo vo = (com.ja.freeboard.vo.BoardVo)map.get("boardVo");
+					      	
+					      	java.util.Date date = vo.getBoard_writedate();
+					      	
+					      	//out.print(date.toString());
+					      	
+					      	java.text.SimpleDateFormat sd = new java.text.SimpleDateFormat("yyyy.MM.dd");
+					      	String printValue = sd.format(date);
+					      	
+					      	//printValue 출력
+					      %>
+					      --%>
+					      <%--<td>${xxx.boardVo.board_writedate }</td> --%>
+					      <td><fmt:formatDate value="${xxx.boardVo.board_writedate }" pattern="yy년mm.dd hh:mm:ss"/></td>
 					    </tr>
 					    </c:forEach>
 					    </tbody>

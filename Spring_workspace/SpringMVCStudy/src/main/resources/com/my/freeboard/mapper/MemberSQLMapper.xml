@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.freeboard.mapper.MemberSQLMapper">
+	<!-- 회원가입 처리 -->
+	<insert id="insertByJoinMember">
+	<![CDATA[
+		insert into FB_MEMBER values(#{member_no}, #{member_id}, #{member_pw}, #{member_nick}, #{member_sex}, sysdate)
+	]]>
+	</insert>
+	
+	<!-- key값을 가져오기 위한 처리 -->
+	<select id="createKey" resultType="int">
+	<![CDATA[
+		select FB_MEMBER_SEQ.nextval from DUAL
+	]]>
+	</select>
+	
+	<!-- 로그인 처리 -->
+	<select id="selectByIdAndPW" resultType="com.my.freeboard.vo.MemberVo">
+	<![CDATA[
+		select * from FB_MEMBER where member_id=#{member_id} and member_pw=#{member_pw}
+	]]>
+	</select>
+	
+	<select id="selectByNo" resultType="com.my.freeboard.vo.MemberVo">
+	<![CDATA[
+		select * from FB_MEMBER where member_no=#{member_no}
+	]]>
+	</select>
+</mapper>
