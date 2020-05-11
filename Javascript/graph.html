@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        #box1, #box2{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        google.charts.load('current', {'packages':['corechart']}); //javascript object 선언 방법
+        google.charts.setOnLoadCallback(drawChart);
+        //콜백 함수
+        function drawChart(){
+            //이중 배열형태 
+            //요소, 요소, 요소, 요소
+            var data = google.visualization.arrayToDataTable([
+                ['gender', 'total'],
+                ['Men',     150],
+                ['Women',      70]
+            ]);
+            //객체 ={키 : 값};
+            var options = {
+               title: '회원 성별 비율',
+               is3D: true
+            };
+            // pieChart를 그릴 객체 생성? div에 그리기 위해 box1가져옴
+            var chart = new google.visualization.PieChart(document.getElementById('box1'));
+            //그리기
+            chart.draw(data, options);
+
+            // Line chart 삽입
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses'],
+                ['2004',  1000,      400],
+                ['2005',  1170,      460],
+                ['2006',  660,       1120],
+                ['2007',  1030,      540]
+            ]);
+
+            var options = {
+                title: '회사 실적',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('box2'));
+
+            chart.draw(data, options);
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+</html>

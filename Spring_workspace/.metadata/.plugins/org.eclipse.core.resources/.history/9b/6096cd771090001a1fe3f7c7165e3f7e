@@ -1,0 +1,19 @@
+package com.ja.freeboard.board.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+//여기가 핵심
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+	
+	@Autowired
+	
+	
+	@RequestMapping("/main_page.do")
+	public String mainPage() {
+		return "board/main_page";
+	}
+	
+}

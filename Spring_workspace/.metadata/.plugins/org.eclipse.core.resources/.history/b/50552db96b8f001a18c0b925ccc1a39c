@@ -1,0 +1,12 @@
+package com.ja.freeboard.mapper;
+
+import org.apache.ibatis.annotations.Insert;
+
+import com.ja.freeboard.vo.MemberVo;
+
+//DAO 
+public interface MemberSQLMapper {
+	@Insert("INSERT INTO FB_Member VALUES(FB_Member_seq.nextval, #{member_id}, #{member_pw},#{member_nick},#{member_sex},SYSDATE)")
+	public void insert(MemberVo vo);//getter를 받아와서 세팅
+	
+}

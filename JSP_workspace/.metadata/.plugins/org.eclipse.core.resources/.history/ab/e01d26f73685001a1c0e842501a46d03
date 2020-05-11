@@ -1,0 +1,19 @@
+package com.ja.rubato.controller.command;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ja.rubato.vo.*;
+
+public class BoardListProcessHandler implements CommandHandler{
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) {
+		ArrayList<ContentDataVo> contentList = new ArrayList<ContentDataVo>();
+		
+		return null;
+	}
+
+}

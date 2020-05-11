@@ -1,0 +1,16 @@
+package com.ja.rubato.model;
+
+import com.ja.rubato.vo.BoardVo;
+
+public class BoardDao {
+	//DB연동 처리
+	private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+	private static final String USER = "SCOTT";
+	private static final String PASSWORD = "TIGER";
+	
+	//게시판 글 처리
+	public ArrayList<BoardVo> BoardList(int b_no){
+		
+		return null;
+	}
+}

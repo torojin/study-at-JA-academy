@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <script>
+        //Javascript String API
+        //쓸만한 기타 등등 API 연습
+        //한글자 출력 charAt(index);
+        var test1 = "안녕하세요";
+        var t = test1.charAt(1);
+        console.log(t);
+
+        //문자의 위치를 찾을때
+        //그 글자가 없을 땐 -1 출력
+        //3부터 하세를 찾겠다 / defualt로 사용하는게 제일 좋음
+        // var index = test1.indexOf("하세", 3);
+        var index = test1.indexOf("하세");
+        console.log(index);
+
+        //뒤에서부터 찾는다
+        index = test1.lastIndexOf(".");
+        console.log(index);
+
+        //length 글자의 길이 확인
+        
+        //replace 치환을 해야할 때
+        //원래 데이터, 바꿀 값
+        test1 = test1.replace("하세", "<br>하세<br>");
+        console.log(test1);
+
+        test1 = test1.substring(1,4);
+        console.log(test1);
+
+        //number 방식?
+        var v1 = 3.13;
+        var t = Number.isFinite(v1);
+        console.log(t);
+
+        //Math
+        //강제형변환
+        var randomValue = parseInt(Math.random() * 100+1);
+        console.log(randomValue);
+
+        //Date
+        //대부분 date타입이 0부터 시작해서 +1를 해줘야함?
+        var d = new Date();
+        var n = d.getMonth()+1;
+        console.log(d);
+        console.log(n);
+        console.log(d.getSeconds());
+        console.log(d.getDate());
+        console.log(d.getDay());
+
+    </script>
+</head>
+<body>
+    <div>안녕하세요</div>
+</body>
+</html>

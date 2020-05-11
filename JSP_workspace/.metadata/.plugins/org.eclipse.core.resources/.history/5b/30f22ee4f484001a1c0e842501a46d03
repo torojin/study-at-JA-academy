@@ -1,0 +1,16 @@
+package constructor;
+
+public class ConstructorTest {
+	public static void main (String[] args) {
+		SubClass subClass = new SubClass();
+	}
+}
+
+
+
+
+class SubClass {
+	public SubClass() {
+		System.out.println("Call Constructor");
+	}
+}

@@ -1,0 +1,5 @@
+package com.ja.robato.controller.command;
+
+public interface CommandHandler {
+
+}

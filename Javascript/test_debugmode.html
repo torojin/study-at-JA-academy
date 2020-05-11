@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>debug mode</title>
+    <script>
+        // 실행하는 주체는 웹 브라우저이다
+        //크롬 도구
+        // elements html 코드(태그) 분석할때 
+        // console 대화창
+        // sources -> debug
+        // text debug
+        var a = 10;
+        var b = 20;
+        var result = a+b;
+        console.log(result);
+
+        if(a < 5){
+            console.log("5보다 작음");
+        }else{
+            console.log("5보다 크다");
+        }
+        
+        for(var i = 0; i < 5; i++){
+            console.log(i);
+        }
+
+        function testFunc(){
+            console.log("안녕하세요");
+        }
+
+        
+
+
+    </script>
+</head>
+<body>
+    <div onclick="testFunc()">박스</div>
+</body>
+</html>

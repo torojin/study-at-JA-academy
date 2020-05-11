@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow</title>
+    <style>
+        /* 넘치는 경우 */
+        #main-box{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            /* 넘친 부분은 숨기겠다 */
+            /* overflow: hidden; */
+            /* 넘친 부분에 스크롤 넣음 */
+            /* overflow: scroll; */
+        }
+        #top{
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .nav{
+            background-color:  red;
+            /* overflow 발생 */
+            width: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-box">
+        <img src="./testimg/logo_nexon.png" alt="">
+    </div>
+
+    <div id="top">
+        <div class="nav">상식</div>
+        <div class="nav">회사</div>
+        <div class="nav">학원</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display</title>
+    <style>
+        /* *{margin: 0; padding: 0;} */
+        #box1{
+            border: 1px solid black;
+            display: block;
+        }
+        ul{
+            border: 1px solid black;
+        }
+        li{
+            border: 1px solid black;
+            display: inline;
+        }
+
+        .box2{
+            border: 1px solid black;
+            /* inline은 크기 조절 불가능 */
+            display: inline;
+            /* height: 100px; */
+        }
+        .box3{
+            border: 1px solid black;
+            /* inline-block은 크기 조절가능 */
+            display: inline-block;
+            height: 100px;
+        }
+        #ds-none{
+            /* 자바스크립트에서 동작시킬때  */
+            /* none 공간 자체를 없앰 */
+            /* display: none; */
+            /*  visibility: hidden는 숨기긴 숨기는데 내용을 숨기는것*/
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">안녕하세요 <br>
+    반갑습니다
+    </div>
+    <ul>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+    </ul>
+
+    <div class="box2">안녕하세요</div>
+    <div class="box2">안녕하세요</div>
+    <div class="box2" id="ds-none">test 안녕하세요</div>
+    <div class="box2">안녕하세요</div>
+    <div class="box2">안녕하세요</div>
+
+    <div class="box3">반갑습니다</div>
+</body>
+</html>

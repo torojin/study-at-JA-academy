@@ -1,0 +1,8 @@
+package com.ja.rubato.model;
+
+public class BoardDao {
+	//게시판 글 처리
+	public BoardVo BoardList{
+		
+	}
+}

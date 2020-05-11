@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Box Model</title>
+        <style>
+            
+            .box1{
+                /* 마진이 공유가 된다. */
+                margin: 0 0 30px 0 ;
+                border: 3px solid black;
+                width: 200px;
+                height: 200px;
+            }
+            .box2{
+                /* margin : 위 오른쪽 아래 왼쪽 */
+                /* margin: 30px 0 0 0 ; */
+                /* padding은 전체 박스의 크기가 변형될 수 있기 때문에 조심해서 사용해야한다. */
+                padding : 50px 0 0 50px;
+                border: 100px solid red;
+                width: 150px;
+                height: 150px;
+                background-color: cadetblue;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- div 만 넣은 상태 : 너비는 전체로 있고 높이가 0인 상태 -->
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+    </body>
+</html>

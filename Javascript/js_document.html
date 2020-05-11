@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM??</title>
+    <style>
+        .font-test{
+            font-size: 30px;
+        }
+
+        .font-blue{
+            color : cyan;
+        }
+        #box1{
+            width : 200px;
+            height : 200px;
+            background-color: darkcyan;
+        }
+    </style>
+    <script>
+        /* 마우스 오버를 했을때 색상 변경하기 */
+        //document : 내장 객체
+        function box1MouseOver(){
+            console.log("실행됨!");
+            var color = document.getElementById("box1");
+            color.style.backgroundColor = "orange";
+            color.style.width = "100px";
+            //attribute속성 넣기 / key와 값으로 구성되어 있다
+            color.setAttribute("class", "font-test font-blue");
+
+        }
+        // 마우스 빠져나왔을때? 색상 변경하기
+        function change(){
+            var box1 = document.getElementById("box1");
+            box1.style.backgroundColor = "darkcyan";
+            box1.style.width = "200px";
+            //attribute 속성 제거하기
+            // box1.setAttribute("class",""); / 제거가 가능하지만 안좋은 방식이다
+            // box1.removeAttribute("class");
+            //한개만 빼겠다
+            box1.setAttribute("class","font-blue");
+        }
+
+        function wrongPw(){
+            var box1 = document.getElementById("alert-box");
+            box1.style.display = "block";
+        }
+        
+
+    </script>
+</head>
+<body>
+    <div id="box1" onclick="wrongPw()" onmouseover="box1MouseOver()" onmouseout="change()">안녕하세요</div>
+    <div style="display:none;" id="alert-box">비밀번호가 틀렸습니다</div>
+    <div>그 다음 박스</div>
+</body>
+</html>

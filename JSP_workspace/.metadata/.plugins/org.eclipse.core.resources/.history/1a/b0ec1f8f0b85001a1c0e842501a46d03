@@ -1,0 +1,22 @@
+package com.ja.rubato.controller.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ja.rubato.vo.MemberVo;
+
+public class LoginProcessHandler implements CommandHandler{
+
+	@Override
+	public String process(HttpServletRequest request, HttpServletResponse response) {
+		//parameter 받아오기
+		String login_id = request.getParameter("login_id");
+		String login_pw = request.getParameter("login_pw");
+		
+		//객체 생성
+		MemberVo memberVo = new MemberVo(login_id, login_pw);
+		
+		return null;
+	}
+
+}

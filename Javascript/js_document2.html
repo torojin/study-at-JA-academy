@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document2</title>
+    <script>
+        //버튼 클릭 후 addLI가져옴
+        //프론트엔드쪽에서 중요한 것
+        function addLI(){
+            var textBox = document.getElementById("text-box");
+            var text = textBox.value;
+            // alert(text);
+            //태그명 삽입
+            var liBox = document.createElement("li");
+            liBox.innerText = text;
+
+            var ulBox = document.getElementById("test-ul");
+            ulBox.appendChild(liBox);
+        }
+
+        function removeLi(){
+
+            var textBox = document.getElementById("text-index");
+            var text = textBox.value;
+            var index = Number(text);
+            
+            if(Number.isNaN(index)){
+                alert("숫자를 입력해주세요");
+
+                textBox.value = "";
+                textBox.focus();
+
+                return;
+            };
+            
+            var ul = document.getElementById("test-ul");
+            ul.removeChild(ul.children[index]);
+        }
+    </script>
+</head>
+<body>
+    <ul id="test-ul">
+        <li>안녕하세요</li>
+        <li>반갑습니다</li>
+    </ul>
+    <input id="text-box" type="text">
+    <!-- addLI함수 호출 -->
+    <input onclick="addLI()" type="button" value="클릭">
+    <br>
+    몇번째를 지웁니까? : <input id="text-index" type="text">
+    <input onclick="removeLi()" type="button" value="지우기">
+
+</body>
+</html>

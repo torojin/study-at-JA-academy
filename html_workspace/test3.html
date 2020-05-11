@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        후손선택자 header h1
+        자손선택자 header > h1 
+        */
+        li{
+            font-size: 30px;
+            /* color: red; */
+        }
+
+        div{
+            color: blue;
+            font-size: 15px;
+        }
+        /* 적용순서 : id > class > tag */
+        
+        #colorChange{
+            color: skyblue;
+        }
+        .change{
+            color: slateblue;
+        }
+        #test{
+            color: springgreen;
+            font-size: 50px;
+        }
+        .useChild li{
+            color: steelblue;
+        }
+        .big_size_font{
+            font-size: 50px;
+        }
+        .red_color{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    <ul>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+        <li id="colorChange">안녕하세요</li>
+        <li class="change">안녕하세요</li>
+        <li>안녕하세요</li>
+    </ul>
+    <ul>
+        <li>반갑습니다</li>
+        <li>반갑습니다</li>
+        <li id="test"class="change">반갑습니다</li>
+        <li>반갑습니다</li>
+        <li>반갑습니다</li>
+    </ul>
+
+    <div>DIV 내용...</div>
+-->
+    <ul>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+        <li class="big_size_font red_color">안녕하세요</li>
+        <li>안녕하세요</li>
+        <li>안녕하세요</li>
+    </ul>
+    <ul>
+        <li>반갑습니다</li>
+        <li>반갑습니다</li>
+        <li>반갑습니다</li>
+        <li>반갑습니다</li>
+        <li>반갑습니다</li>
+    </ul>
+
+</body>
+</html>
