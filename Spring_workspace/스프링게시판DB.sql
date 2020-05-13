@@ -12,6 +12,8 @@ MEMBER_JOINDATE date
 drop sequence FB_MEMBER_SEQ;
 create sequence FB_MEMBER_SEQ;
 
+insert into FB_MEMBER values(FB_MEMBER_SEQ.nextval, 'id', 'pw', 'nick', 'W', sysdate);
+
 --昼耕 朝砺壱軒
 drop table FB_HOBBY_CATEGORY;
 create table FB_HOBBY_CATEGORY(
@@ -54,12 +56,71 @@ BOARD_WRITEDATE date
 drop sequence FB_BOARD_SEQ;
 create sequence FB_BOARD_SEQ;
 
-select * from FB_MEMBER;
+desc FB_MEMBER;
+desc fb_board;
+select * from FB_MEMBER where member_no = '1' order by member_no desc;
 select * from FB_HOBBY;
+select * from FB_HOBBY_CATEGORY;
+select * from FB_BOARD;
 
 select fb_member_seq.nextval from dual;
 
+insert into FB_HOBBY values(FB_HOBBY_SEQ.nextval,'22');
+
+SELECT * FROM FB_Member WHERE member_no = 1;
+SELECT * FROM FB_Member WHERE member_id = '1111' and member_pw = '1111';
+
+select * from fb_board order by board_no;
+
+select * from fb_board where board_no='3';
+
+UPDATE FB_BOARD SET BOARD_READCOUNT = BOARD_READCOUNT+1 WHERE BOARD_NO = 1;
+
+commit;
+
+---------------------------------------------------------------------------
+
+--伊事 汀軒
+select * 
+from(
+    select ROWNUM rnum, t1.* 
+    from(
+        select * from fb_board
+        where board_title like '%gk%'
+        order by board_no desc
+        )t1
+    )t2
+where t2.rnum >= (2-1)*10+1 and t2.rnum <= 2*10; 
+
+select count(*) 
+from(
+    select ROWNUM rnum, t1.* 
+    from(
+        select * from fb_board
+        where board_title like '%gk%'
+        order by board_no desc
+        )t1
+    )t2;
 
 
+select count(*) from fb_board
+where board_title like '%gkgk%';
+
+
+--凪戚臓 坦軒
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+insert into fb_board values(fb_board_seq.nextval, 1, '馬馬馬馬馬', '馬馬馬馬馬馬馬馬焼焼焼',0,sysdate);
+
+delete fb_board
+
+
+commit;
 
 
