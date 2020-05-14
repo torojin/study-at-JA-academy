@@ -124,3 +124,14 @@ delete fb_board
 commit;
 
 
+drop table FB_Upload_File;
+create table FB_Upload_File(
+    file_no number(8) PRIMARY KEY,
+    board_no number(8),
+    file_link_path varchar2(100),
+    file_real_path varchar2(200),
+    file_upload_date date
+);
+
+drop sequence FB_Upload_File_seq;
+create sequence FB_Upload_File_seq;
