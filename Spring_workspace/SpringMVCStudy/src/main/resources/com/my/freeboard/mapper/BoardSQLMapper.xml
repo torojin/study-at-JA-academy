@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.my.freeboard.mapper.BoardSQLMapper">
+	<insert id="insertByWrite">
+	<![CDATA[
+		insert into FB_BOARD 
+		values(FB_BOARD_SEQ.nextval,
+		#{member_no}, 
+		#{board_title}, 
+		#{board_content}, 
+		0, 
+		SYSDATE)
+	]]>
+	</insert>
+	
+	<select id="selectByNo" resultType="com.my.freeboard.vo.BoardVo">
+	<![CDATA[
+		select * from fb_board where board_no=#{no}
+	]]>
+	</select>
+	
+	<select id="selectAll" resultType="com.my.freeboard.vo.BoardVo">
+	<![CDATA[
+		select * from fb_board order by board_no
+	]]>
+	</select>
+</mapper>
+
+
