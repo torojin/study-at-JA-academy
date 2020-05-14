@@ -58,7 +58,7 @@ create sequence FB_BOARD_SEQ;
 
 desc FB_MEMBER;
 desc fb_board;
-select * from FB_MEMBER where member_no = '1' order by member_no desc;
+select * from FB_MEMBER order by member_no desc;
 select * from FB_HOBBY;
 select * from FB_HOBBY_CATEGORY;
 select * from FB_BOARD;
@@ -135,3 +135,7 @@ create table FB_Upload_File(
 
 drop sequence FB_Upload_File_seq;
 create sequence FB_Upload_File_seq;
+
+select * from FB_Upload_File;
+
+
