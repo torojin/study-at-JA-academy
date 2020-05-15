@@ -138,4 +138,19 @@ create sequence FB_Upload_File_seq;
 
 select * from FB_Upload_File;
 
+-- 이메일 인증
+drop table FB_Member_Auth;
+create table FB_Member_Auth(
+    auth_no number(8) primary key,
+    member_no number(8),
+    auth_certification varchar2(4),
+    auth_key varchar2(100)
+);
+drop sequence FB_Member_Auth_seq;
+create sequence FB_Member_Auth_seq;
+
+select * from FB_member order by member_no desc;
+select * from FB_Member_Auth;
+
+select * from FB_member m, fb_member_auth a where m.member_no = a.member_no and m.member_id = 'test111@gmail.com' and m.member_pw = '4280d929dd796ba5ecc31e2907f9aa8c2230c2e1'and a.auth_certification = 'Y';
 
