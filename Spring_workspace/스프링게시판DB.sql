@@ -154,3 +154,29 @@ select * from FB_Member_Auth;
 
 select * from FB_member m, fb_member_auth a where m.member_no = a.member_no and m.member_id = 'test111@gmail.com' and m.member_pw = '4280d929dd796ba5ecc31e2907f9aa8c2230c2e1'and a.auth_certification = 'Y';
 
+
+--´ñ±Û
+drop table FB_Reply;
+create table FB_Reply(
+    reply_no number(8) primary key,
+    board_no number(8),
+    member_no number(8),
+    reply_content varchar2(1000),
+    reply_writedate date
+);
+
+drop sequence FB_Reply_seq;
+create sequence FB_Reply_seq;
+
+select * from FB_Reply;
+
+desc FB_Reply;
+select * 
+from FB_Reply
+order by reply_no desc;
+
+
+
+
+
+
