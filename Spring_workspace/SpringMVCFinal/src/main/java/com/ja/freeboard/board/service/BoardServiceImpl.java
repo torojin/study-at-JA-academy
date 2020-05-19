@@ -5,8 +5,10 @@ import org.springframework.stereotype.Service;
 
 import com.ja.freeboard.mapper.BoardSQLMapper;
 import com.ja.freeboard.mapper.MemberSQLMapper;
+import com.ja.freeboard.mapper.UploadFileSQLMapper;
 import com.ja.freeboard.vo.BoardVo;
 import com.ja.freeboard.vo.MemberVo;
+import com.ja.freeboard.vo.UploadFileVo;
 
 import java.util.*;
 
@@ -20,17 +22,47 @@ public class BoardServiceImpl {
 	private BoardSQLMapper boardSQLMapper;
 	@Autowired
 	private MemberSQLMapper memberSQLMapper;
+	@Autowired
+	private UploadFileSQLMapper uploadFileSQLMapper;
 	
 	
-	public void writeContent(BoardVo boardVo) {
+	public void writeContent(BoardVo boardVo, List<UploadFileVo> fileVoList) {
+		
+		int boardKey = boardSQLMapper.createKey();
+		boardVo.setBoard_no(boardKey);
+		
 		boardSQLMapper.insert(boardVo);
+		
+		for(UploadFileVo fileVo : fileVoList) {
+			fileVo.setBoard_no(boardKey);
+			uploadFileSQLMapper.insert(fileVo);
+		}
+		
 	}
 	
-	public List<Map<String, Object>> getBoardList() {
+	//게시글 수
+	public int getBoardDataCount(String searchWord) {
+		if(searchWord == null) {
+			return boardSQLMapper.selectAllCount();
+		}else {
+			return boardSQLMapper.selectByTitleCount(searchWord);
+		}
+			
+	}
+	
+	
+	public List<Map<String, Object>> getBoardList(String searchWord, int currPage) {
 		//자바 8버전부터는 new ArrayList<>이렇게 Map를 생략해서 사용 가능하다
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 		
-		List<BoardVo> boardList = boardSQLMapper.selectAll();
+		List<BoardVo> boardList = null;
+		
+		if(searchWord == null) {
+			boardList = boardSQLMapper.selectAll(currPage);
+		}else {
+			boardList = boardSQLMapper.selectByTitle(searchWord,currPage);
+		}
+		
 		//hashMap으로 넣겠다
 		for(BoardVo boardVo : boardList) {
 			MemberVo memberVo = memberSQLMapper.selectByNo(boardVo.getMember_no());
@@ -55,8 +87,12 @@ public class BoardServiceImpl {
 		BoardVo boardVo = boardSQLMapper.selectByNo(board_no);
 		MemberVo memberVo = memberSQLMapper.selectByNo(boardVo.getMember_no());
 		
+		List<UploadFileVo> fileVoList = uploadFileSQLMapper.selectByBoardNo(board_no);
+		
 		map.put("memberVo", memberVo);
 		map.put("boardVo", boardVo);
+		map.put("fileVoList", fileVoList);
+		
 		
 		return map;
 	}

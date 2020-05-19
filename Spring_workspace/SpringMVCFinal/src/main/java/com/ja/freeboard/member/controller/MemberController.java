@@ -22,7 +22,9 @@ public class MemberController {
 	//로그인 페이지
 	@RequestMapping("/login_page.do")
 	public String loginPage() {
+	System.out.println("왜!?");
 		return "member/login_page";
+	
 	}
 	
 	//회원가입 페이지

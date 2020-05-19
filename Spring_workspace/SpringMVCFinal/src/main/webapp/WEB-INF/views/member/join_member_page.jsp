@@ -4,27 +4,71 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- 부트스트랩 모바일용으로 처리 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function frm_submit(){
+		//alert("안녕하세요");
+		var frm = document.getElementById("frm"); //form 태그의 id를 받아와서 사용하겠다
+		
+		//글 작성 했는지 안했는지 확인(유효성 검사)
+		var idBox = document.getElementById("id"); //태그에 있는 오브젝트를 가져온다
+		
+		//ID 유효성 이메일(정규식 처리) / 정말 쓸 일 있으면 예제 찾아서 써라 / 만들일은 많이 없다
+		var reg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+		
+		
+		//if(idBox.value == ""){
+		//	alert("아이디 값을 입력해주세요");
+		//	return;
+		//}
+		
+		if(!reg.test(idBox.value)){
+			alert("아이디는 이메일 형식에 맞춰야합니다.");
+			idBox.value = "";
+			idBox.focus();
+			return;
+		}
+		
+		//비밀번호 정규식 처리
+		//변수 재활용
+		reg = /^[A-Za-z0-9]{6,12}$/;
+		
+		var pwBox = document.getElementById("pw");
+		
+		if(!reg.test(pwBox.value)){
+			alert("비밀번호는 숫자, 영문자로 6-12자리 여야 합니다.");
+			pwBox.value = "";
+			pwBox.focus();
+			return;
+		}
+		
+				
+		frm.submit(); //submit API 
+	}
+
+</script>
 </head>
 <body>
 <jsp:include page="../commons/globel_nav.jsp"></jsp:include>
 <div class="container">
 	<div class="row">
-		<div class="col-3"></div>
+		<div class="col"></div>
 		<div class="col">
-		<form action="./join_member_process.do" method="post">
+		<form id="frm" action="./join_member_process.do" method="post">
 			<div class="row mt-5"><!-- 회원가입 제목 시작 -->
 				<div class="col text-center"><h1>회원가입</h1></div>
 			</div><!-- 회원가입 제목 끝-->
 			<div class="row"><!-- ID / PW 시작 -->
 			    <div class="form-group col-md-6">
 			    	<label for="inputEmail4">ID</label>
-			    	<input name="member_id" type="email" class="form-control" id="inputEmail4" placeholder="email를 입력하세요">
+			    	<input id="id" name="member_id" type="email" class="form-control" id="inputEmail4" placeholder="email를 입력하세요">
 			    </div>
 			    <div class="form-group col-md-6">
 			    	<label for="inputPW">PW</label>	
-			    	<input name="member_pw" type="password" class="form-control" id="inputEmail4" placeholder="비밀번호를 입력하세요">
+			    	<input id="pw" name="member_pw" type="password" class="form-control" id="inputEmail4" placeholder="비밀번호를 입력하세요">
 			    </div>
 			</div><!-- ID / PW 끝 -->
 			<div class="row"><!-- Nick 시작 -->
@@ -52,11 +96,11 @@
 			    </div>
 			</div><!-- Gender / Hobby 끝 -->
 			<div class="row mt-3"><!-- 회원가입 버튼 시작 -->
-				<input class="btn btn-outline-info" type="submit" value="회원가입">
+				<input onclick="frm_submit()" class="btn btn-outline-info" type="button" value="회원가입">
 			</div><!-- 회원가입 버튼 끝 -->
 		</form>
 		</div>
-		<div class="col-3"></div>
+		<div class="col"></div>
 	</div>
 </div>
 

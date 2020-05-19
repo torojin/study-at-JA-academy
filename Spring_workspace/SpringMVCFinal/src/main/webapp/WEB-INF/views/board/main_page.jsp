@@ -13,7 +13,19 @@
 <jsp:include page="../commons/globel_nav.jsp"></jsp:include>
 <div class="container">
 	<div class="row">
-		<div class="col">
+		<div class="col">	
+		<%-- 자기자신 페이지로 호출하겠다  --%>
+			<form action="./main_page.do" method="get">	
+			<div class="row my-3">
+				<div class="col-8"></div>
+				<div class="col">
+					<input name="search_word" type="text" class="form-control">
+				</div>
+				<div class="col-1">
+					<input type="submit" class="btn btn-primary btn-block" value="검색">
+				</div>
+			</div>
+			</form>
 			<div class="row"><!-- 테이블 시작-->
 				<div class="col mt-5">
 					<table class="table table-hover">
@@ -62,13 +74,11 @@
 				<div class="col"><!-- 페이징 시작-->
 					<nav aria-label="Page navigation example">
 					  <ul class="pagination">
-					    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-					    <li class="page-item"><a class="page-link" href="#">1</a></li>
-					    <li class="page-item"><a class="page-link" href="#">2</a></li>
-					    <li class="page-item active"><a class="page-link" href="#">3</a></li>
-					    <li class="page-item"><a class="page-link" href="#">4</a></li>
-					    <li class="page-item"><a class="page-link" href="#">5</a></li>
-					    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+					  	<li class="page-item<c:if test="${beginPage-1 <= 0}"> disabled</c:if>"><a class="page-link" href="./main_page.do?currPage=${beginPage-1}&search_word=${param.search_word}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+					    <c:forEach begin="${beginPage }" end="${endPage }" var="i">
+					    	<li class="page-item<c:if test="${currPage==i}"> active</c:if>"><a class="page-link" href="./main_page.do?currPage=${i}&search_word=${param.search_word}">${i}</a></li>
+					    </c:forEach>
+					    <li class="page-item<c:if test="${endPage+1 > (totalCount-1)/10+1}"> disabled</c:if>"><a class="page-link" href="./main_page.do?currPage=${endPage+1}&search_word=${param.search_word}" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
 					  </ul>
 					</nav>
 				</div><!-- 페이징 끝 -->

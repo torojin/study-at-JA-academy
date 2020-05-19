@@ -15,6 +15,11 @@
 내용 : <br>
 ${data.boardVo.board_content }<br>
 <br>
+<c:forEach items="${data.fileVoList}" var="fileVo">
+	<img src="/upload/${fileVo.file_link_path}">
+	<br>
+</c:forEach>
+
 
 <a href="${pageContext.request.contextPath}/board/main_page.do">목록으로</a>
 

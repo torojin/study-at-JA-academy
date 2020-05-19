@@ -58,7 +58,7 @@ create sequence FB_BOARD_SEQ;
 
 desc FB_MEMBER;
 desc fb_board;
-select * from FB_MEMBER where member_no = '1' order by member_no desc;
+select * from FB_MEMBER order by member_no desc;
 select * from FB_HOBBY;
 select * from FB_HOBBY_CATEGORY;
 select * from FB_BOARD;
@@ -122,5 +122,61 @@ delete fb_board
 
 
 commit;
+
+
+drop table FB_Upload_File;
+create table FB_Upload_File(
+    file_no number(8) PRIMARY KEY,
+    board_no number(8),
+    file_link_path varchar2(100),
+    file_real_path varchar2(200),
+    file_upload_date date
+);
+
+drop sequence FB_Upload_File_seq;
+create sequence FB_Upload_File_seq;
+
+select * from FB_Upload_File;
+
+-- 이메일 인증
+drop table FB_Member_Auth;
+create table FB_Member_Auth(
+    auth_no number(8) primary key,
+    member_no number(8),
+    auth_certification varchar2(4),
+    auth_key varchar2(100)
+);
+drop sequence FB_Member_Auth_seq;
+create sequence FB_Member_Auth_seq;
+
+select * from FB_member order by member_no desc;
+select * from FB_Member_Auth;
+
+select * from FB_member m, fb_member_auth a where m.member_no = a.member_no and m.member_id = 'test111@gmail.com' and m.member_pw = '4280d929dd796ba5ecc31e2907f9aa8c2230c2e1'and a.auth_certification = 'Y';
+
+
+--댓글
+drop table FB_Reply;
+create table FB_Reply(
+    reply_no number(8) primary key,
+    board_no number(8),
+    member_no number(8),
+    reply_content varchar2(1000),
+    reply_writedate date
+);
+
+drop sequence FB_Reply_seq;
+create sequence FB_Reply_seq;
+
+select * from FB_Reply;
+
+desc FB_Reply;
+select * 
+from FB_Reply
+order by reply_no desc;
+
+
+
+
 
 
